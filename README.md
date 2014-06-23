@@ -1,7 +1,7 @@
 ProjetoHibernate
 ================
 
-Projeto acadêmico desenvolvido em Java EE com Hibernate.
+> Projeto acadêmico desenvolvido em Java EE com Hibernate.
 
 Configurações
 -------------
