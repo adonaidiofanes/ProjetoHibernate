@@ -1,0 +1,72 @@
+[
+	{
+		"Id": 1,
+        "Latitude": -22.933423,
+        "Longitude": -43.176763,
+		"Descricao": "<b>Cliente:</b> Nome do Cliente 1<br><b>Status:</b> A Caminho<br><b>Endereço:</b> Rua X<br> <b>Telefone:</b> (21) 3333-3333<br> <b>Serviço:</b> Instalação de Banda Larga 2M <br> <b>Horário do agendamento: </b> 12:00<br>-------------------------<br><b>Equipe:</b> #001<br> <b>Técnicos:</b> Nome1, Nome2, Nome3<br> <b>Smartphone: </b> (21) 4444-4444",
+		"CD_STATUS": "C"
+    },
+    {
+		"Id": 2,
+        "Latitude": -22.902053,
+        "Longitude": -43.178882,
+		"Descricao": "<b>Cliente:</b> Nome do Cliente 2<br><b>Status:</b> A Caminho<br><b>Endereço:</b> Rua X<br> <b>Telefone:</b> (21) 3333-3333<br> <b>Serviço:</b> Instalação de Banda Larga 2M <br> <b>Horário do agendamento: </b> 12:00<br>-------------------------<br><b>Equipe:</b> #001<br> <b>Técnicos:</b> Nome1, Nome2, Nome3<br> <b>Smartphone: </b> (21) 4444-4444",
+		"CD_STATUS": "C"
+    },
+    {
+		"Id": 3,
+        "Latitude": -22.902715,
+        "Longitude": -43.178635,
+		"Descricao": "<b>Cliente:</b> Nome do Cliente 3<br><b>Status:</b> Em Atendimento<br><b>Endereço:</b> Rua X<br> <b>Telefone:</b> (21) 3333-3333<br> <b>Serviço:</b> Instalação de Banda Larga 2M <br> <b>Horário do agendamento: </b> 12:00<br>-------------------------<br><b>Equipe:</b> #001<br> <b>Técnicos:</b> Nome1, Nome2, Nome3<br> <b>Smartphone: </b> (21) 4444-4444",
+		"CD_STATUS": "E"
+    },
+  	{
+		"Id": 4,
+    	"Latitude": -22.905358,
+    	"Longitude": -43.175575,
+		"Descricao": "<b>Cliente:</b> Nome do Cliente 4<br><b>Status:</b> Em Atendimento<br><b>Endereço:</b> Rua X<br> <b>Telefone:</b> (21) 3333-3333<br> <b>Serviço:</b> Instalação de Banda Larga 2M <br> <b>Horário do agendamento: </b> 12:00<br>-------------------------<br><b>Equipe:</b> #001<br> <b>Técnicos:</b> Nome1, Nome2, Nome3<br> <b>Smartphone: </b> (21) 4444-4444",
+		"CD_STATUS": "E"
+  	},
+  	{
+		"Id": 5,
+    	"Latitude": -22.910419,
+    	"Longitude": -43.165305,
+		"Descricao": "<b>Cliente:</b> Nome do Cliente 5<br><b>Status:</b> Atendimento Finalizado<br><b>Endereço:</b> Rua X<br> <b>Telefone:</b> (21) 3333-3333<br> <b>Serviço:</b> Instalação de Banda Larga 2M <br> <b>Horário do agendamento: </b> 12:00<br>-------------------------<br><b>Equipe:</b> #001<br> <b>Técnicos:</b> Nome1, Nome2, Nome3<br> <b>Smartphone: </b> (21) 4444-4444",
+		"CD_STATUS": "A"
+  	},
+  	{
+		"Id": 6,
+    	"Latitude": -22.979168,
+    	"Longitude": -43.231842,
+		"Descricao": "<b>Cliente:</b> Nome do Cliente 6<br><b>Status:</b> Atendimento Finalizado<br><b>Endereço:</b> Rua X<br> <b>Telefone:</b> (21) 3333-3333<br> <b>Serviço:</b> Instalação de Banda Larga 2M <br> <b>Horário do agendamento: </b> 12:00<br>-------------------------<br><b>Equipe:</b> #001<br> <b>Técnicos:</b> Nome1, Nome2, Nome3<br> <b>Smartphone: </b> (21) 4444-4444",
+		"CD_STATUS": "A"
+  	},
+  	{
+		"Id": 7,
+    	"Latitude": -22.985994,
+    	"Longitude": -43.214234,
+		"Descricao": "<b>Cliente:</b> Nome do Cliente<br><b>Status:</b> Atendimento Pendente<br><b>Endereço:</b> Rua X<br> <b>Telefone:</b> (21) 3333-3333<br> <b>Serviço:</b> Instalação de Banda Larga 2M <br> <b>Horário do agendamento: </b> 12:00<br>-------------------------<br><b>Equipe:</b> #001<br> <b>Técnicos:</b> Nome1, Nome2, Nome3<br> <b>Smartphone: </b> (21) 4444-4444",
+		"CD_STATUS": "P"
+  	},
+  	{
+		"Id": 8,
+    	"Latitude": -22.981391,
+    	"Longitude": -43.208537,
+		"Descricao": "<b>Cliente:</b> Nome do Cliente<br><b>Status:</b> Atendimento Pendente<br><b>Endereço:</b> Rua X<br> <b>Telefone:</b> (21) 3333-3333<br> <b>Serviço:</b> Instalação de Banda Larga 2M <br> <b>Horário do agendamento: </b> 12:00<br>-------------------------<br><b>Equipe:</b> #001<br> <b>Técnicos:</b> Nome1, Nome2, Nome3<br> <b>Smartphone: </b> (21) 4444-4444",
+		"CD_STATUS": "P"
+  	},
+  	{
+		"Id": 9,
+    	"Latitude": -22.964741,
+    	"Longitude": -43.173182,
+		"Descricao": "<b>Cliente:</b> Nome do Cliente<br><b>Status:</b> Atendimento Pendente<br><b>Endereço:</b> Rua X<br> <b>Telefone:</b> (21) 3333-3333<br> <b>Serviço:</b> Instalação de Banda Larga 2M <br> <b>Horário do agendamento: </b> 12:00<br>-------------------------<br><b>Equipe:</b> #001<br> <b>Técnicos:</b> Nome1, Nome2, Nome3<br> <b>Smartphone: </b> (21) 4444-4444",
+		"CD_STATUS": "P"
+  	},
+  	{
+		"Id": 10,
+    	"Latitude": -22.988403,
+    	"Longitude": -43.192434,
+		"Descricao": "<b>Cliente:</b> Nome do Cliente<br><b>Status:</b> Atendimento Pendente<br><b>Endereço:</b> Rua X<br> <b>Telefone:</b> (21) 3333-3333<br> <b>Serviço:</b> Instalação de Banda Larga 2M <br> <b>Horário do agendamento: </b> 12:00<br>-------------------------<br><b>Equipe:</b> #001<br> <b>Técnicos:</b> Nome1, Nome2, Nome3<br> <b>Smartphone: </b> (21) 4444-4444",
+		"CD_STATUS": "P"
+  	}
+]

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>   
+ <!DOCTYPE hibernate-configuration PUBLIC   
+      "-//Hibernate/Hibernate Configuration DTD 3.0//EN"   
+      "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/db_sge</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">ad0nai</property>
+		
+		<property name="hibernate.current_session_context_class">thread</property> 
+		<!--property name="hibernate.session_factory_name">SessionFactory</property -->
+		
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<!-- property name="hibernate.hbm2ddl.auto">create-drop</property -->
+
+		<mapping class="br.telehand.model.TbUsuario" />
+		<mapping class="br.telehand.model.TbAtendimento" />
+		<mapping class="br.telehand.model.TbAgenda" />
+		<mapping class="br.telehand.model.TbAgendaId" />
+		<mapping class="br.telehand.model.TbOs" />
+		<mapping class="br.telehand.model.TbAlmKit" />
+		<mapping class="br.telehand.model.TbBloqueio" />
+		<mapping class="br.telehand.model.TbBloqueioId" />
+		<mapping class="br.telehand.model.TbCalendario" />
+		<mapping class="br.telehand.model.TbCalendarioId" />
+		<mapping class="br.telehand.model.TbCategoria" />
+		<mapping class="br.telehand.model.TbDadosClientes" />
+		<mapping class="br.telehand.model.TbDias" />
+		<mapping class="br.telehand.model.TbDiasId" />
+		<mapping class="br.telehand.model.TbEquipe" />
+		<mapping class="br.telehand.model.TbJanela" />
+		<mapping class="br.telehand.model.TbLog" />
+		<mapping class="br.telehand.model.TbLogId" />
+		<mapping class="br.telehand.model.TbReporte" />
+		<mapping class="br.telehand.model.TbReporteId" />
+		<mapping class="br.telehand.model.TbRh" />
+		<mapping class="br.telehand.model.TbRhDisponibilidade" />
+		<mapping class="br.telehand.model.TbServico" />
+		<mapping class="br.telehand.model.TbTecAuxiliares" />
+		<mapping class="br.telehand.model.TbTecAuxiliaresId" />
+		<mapping class="br.telehand.model.TbUsuario" />
+		<mapping class="br.telehand.model.VwAlmoxarife" />
+		<mapping class="br.telehand.model.VwAlmoxarifeId" />
+		<mapping class="br.telehand.model.VwDadosClientes" />
+		<mapping class="br.telehand.model.VwDadosClientesId" />
+		<mapping class="br.telehand.model.VwDadosRh" />
+		<mapping class="br.telehand.model.ViewClientes" />
+		<mapping class="br.telehand.model.ViewAgenda" />
+		<mapping class="br.telehand.model.TbLogin" />
+		<mapping class="br.telehand.model.TbLoginId" />
+		
+		<mapping class="br.telehand.model.VwAgendaComAgendamento" />
+		<mapping class="br.telehand.model.VwAgendaComAgendamentoId" />
+		<mapping class="br.telehand.model.VwAgendaSemAgendamento" />
+		<mapping class="br.telehand.model.VwAgendaSemAgendamentoId" />
+
+	</session-factory>
+</hibernate-configuration>
