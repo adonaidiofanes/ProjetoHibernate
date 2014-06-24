@@ -67,6 +67,7 @@ public class ReporteServlet extends HttpServlet {
 				
 				JSONObject jObj = new JSONObject();
 
+				jObj.put("IdOS", reporte.getTbAtendimento().getTbOs().getIdOs());
 				jObj.put("Latitude", reporte.getTxLatitude());
 				jObj.put("Longitude", reporte.getTxLongitude());
 				jObj.put("CdStatus", String.valueOf(reporte.getId().getCdStatus()));
@@ -79,27 +80,19 @@ public class ReporteServlet extends HttpServlet {
 				JSONObject jObj2 = new JSONObject();
 				jObj2.put("tbAgendamento", jObj);
 				
-				String CNPJ = "";
-				String CPF = "";
+				Integer idCliente = 0;
 				
-//				if( (reporte.getTbOs().getNrCnpj()) != null ){
-				if( (reporte.getTbAtendimento().getTbOs().getNrCnpj()) != null ){
-					CNPJ = reporte.getTbAtendimento().getTbOs().getNrCnpj().toString();
-				}
-				
-				if( (reporte.getTbAtendimento().getTbOs().getNrCpf()) != null ){
-					CPF = reporte.getTbAtendimento().getTbOs().getNrCpf().toString();
+				if( (reporte.getTbAtendimento().getTbOs().getIdCliente()) != null ){
+					idCliente = reporte.getTbAtendimento().getTbOs().getIdCliente();
 				}
 				
 				// Resgatar dados do cliente
 				ViewClienteDAO vDAO = new ViewClienteDAO();
 				
-				ViewClientes cliente = vDAO.findByDoc(CPF,CNPJ);
+				ViewClientes cliente = vDAO.buscarPorIdCliente(idCliente);
 				
 				JSONObject jObjC = new JSONObject();
 				jObjC.put("IdCliente", cliente.getId_cliente());
-				jObjC.put("CPF", cliente.getCpf());
-				jObjC.put("CNPJ", cliente.getCnpj());
 				jObjC.put("NmCliente", cliente.getNmCliente());
 				jObjC.put("Email", cliente.getCdEmail());
 				jObjC.put("Endereco", cliente.getEndereco());

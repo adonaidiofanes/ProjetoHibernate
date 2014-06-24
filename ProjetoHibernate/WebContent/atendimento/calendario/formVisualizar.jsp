@@ -38,12 +38,12 @@
 	// pegar tx_detalhe
 	String descricao = os.getTxDetalhe();
 	
-	// pegar cpf ou cnpj
-	String CPF = os.getNrCpf();
-	String CNPJ = os.getNrCnpj();
-	
 	ViewClienteDAO clienteDAO = new ViewClienteDAO();
-	ViewClientes cliente = clienteDAO.findByDoc(CPF, CNPJ);
+	ViewClientes cliente = clienteDAO.buscarPorIdCliente(os.getIdCliente());
+	
+	// pegar cpf ou cnpj 
+	String CPF = cliente.getCpf();
+	String CNPJ = cliente.getCnpj();
 	
 	CategoriaDAO DAOCategoria = new CategoriaDAO();
 	
@@ -56,7 +56,7 @@
 
 		<ol class="breadcrumb">
 			<li><a href="#">O.S.</a></li>
-			<li class=""><a href="/ProjetoHibernate/atendimento/">Atendimentos</a></li>
+			<li class=""><a href="/ProjetoHibernate/atendimento/calendario/">Atendimentos</a></li>
 			<li class="active">Visualizar Atendimento</li>
 		</ol>
 
@@ -74,7 +74,7 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								
-								<% if( CPF != "" && CPF != "0" && !CPF.isEmpty() ){ %>
+								<% if( CPF != null && CPF != "" && CPF != "0" && !CPF.isEmpty() ){ %>
 								<div class="controle-cpf">
 									<label for="cpf" class="col-sm-2 control-label">CPF</label>
 									<div class="col-sm-8">
@@ -83,7 +83,7 @@
 								</div>
 								<% } %>
 								
-								<% if( CNPJ != "" && CNPJ != "0" && !CNPJ.isEmpty() ){ %>
+								<% if( CNPJ  != null && CNPJ != "" && CNPJ != "0" && !CNPJ.isEmpty() ){ %>
 								<div class="controle-cnpj">
 									<label for="cnpj" class="col-sm-2 control-label">CNPJ</label>
 									<div class="col-sm-8">
@@ -101,7 +101,7 @@
 						<div class="col-md-12">
 							<div class="form-group">
 							
-								<% if( CPF != "" && CPF != "0" && !CPF.isEmpty() ){ %>
+								<% if( CPF != null && CPF != "" && CPF != "0" && !CPF.isEmpty() ){ %>
 								<div class="controle-cpf">
 									<label for="nome" class="col-sm-2 control-label">Nome</label>
 									<div class="col-sm-10">
@@ -110,7 +110,7 @@
 								</div>
 								<% } %>
 								
-								<% if( CNPJ != "" && CNPJ != "0" && !CNPJ.isEmpty() ){ %>
+								<% if( CNPJ != null && CNPJ != "" && CNPJ != "0" && !CNPJ.isEmpty() ){ %>
 								<div class="controle-cnpj">
 									<label for="razao" class="col-sm-2 control-label">Razão Social</label>
 									<div class="col-sm-10">

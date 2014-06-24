@@ -115,6 +115,7 @@
 							<input type="hidden" id="idJanela" name="idJanela" value="<%= idJanela %>">
 							<input type="hidden" id="matriculaTecnico" name="matriculaTecnico" value="<%= matriculaTecnico %>">
 							<input type="hidden" id="dt_agendamento" name="dt_agendamento" value="<%= dt_agendamento %>">
+							<input type="hidden" id="idcliente" name="idcliente" value="">
 							
 					</form>
 				</div>

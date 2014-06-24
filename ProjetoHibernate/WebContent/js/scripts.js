@@ -241,15 +241,20 @@ $(document).ready(function() {
             url: "/ProjetoHibernate/ClienteServlet.do",
             dataType: "json",
             success: function(result){
+            	
+            	console.log("T:" + result);
+            	
             	$('#ajaxModal').modal('hide');
             	
             	if( result.length > 0 ){
                 	
             		if( cpf!="" ){
-                		$("#Nome").val(result);
+                		$("#Nome").val(result[0]);
                 	} else {
-                		$("#razao").val(result);
+                		$("#razao").val(result[0]);
                 	}
+            		
+            		$("#idcliente").val(result[1]);
             		
             		$("#descricao").focus();
                 	
@@ -257,13 +262,12 @@ $(document).ready(function() {
             		if( $("#modalRetorno") ){
             			$("#modalRetorno").remove();
             		}
-            		$tplModal = $tplModalSmall.replace("@mensagem", "Cliente nï¿½o encontrado!");
+            		$tplModal = $tplModalSmall.replace("@mensagem", "Cliente não encontrado!");
             		$("body").append($tplModal);
             		$('#modalRetorno').modal('show');
-            		
+            		$("#idcliente").val("");
             	}
             	
-
         	},
             beforeSend: function(){
             	if( $("#ajaxModal") ){ $("#ajaxModal").remove(); }

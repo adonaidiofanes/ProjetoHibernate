@@ -97,8 +97,7 @@ public class OrdemServicoServlet extends HttpServlet {
 						&& (request.getParameter("id") != null))){
 			
 			Integer Id = Integer.parseInt(request.getParameter("id"));
-			String CPF = "";
-			String CNPJ = "";
+			Integer IdCliente = 0;
 			
 			request.setAttribute("IdOs", Id);
 			
@@ -117,18 +116,15 @@ public class OrdemServicoServlet extends HttpServlet {
 			request.setAttribute("slcStatus", os.slcStatus());
 			request.setAttribute("cssClass", os.cssClass());
 			request.setAttribute("NomeStatus", os.nomeStatus());
-			
-			if( os.getNrCpf() != null ){  CPF = os.getNrCpf(); } 
-			request.setAttribute("CPF", CPF);
-			
-			if( os.getNrCnpj() != null ){ CNPJ = os.getNrCnpj(); } 
-			request.setAttribute("CNPJ", CNPJ);
+			request.setAttribute("IdCliente", os.getIdCliente());
 			
 			if( os.getDtFim() != null ){ 
 				request.setAttribute("DtFim", Util.DateParaString(os.getDtFim(), "dd/MM/yyyy HH:mm:ss"));
 			} else {
 				request.setAttribute("DtFim", "");
 			}
+			
+			IdCliente = os.getIdCliente();
 			
 			ServicoDAO sDAO = new ServicoDAO();
 			String optionsServico = sDAO.gerarOptions(IdServico);
@@ -138,7 +134,7 @@ public class OrdemServicoServlet extends HttpServlet {
 			request.setAttribute("Servico", selectServico);
 			
 			ViewClienteDAO cDAO = new ViewClienteDAO();
-			ViewClientes cliente = cDAO.findByDoc(CPF, CNPJ);
+			ViewClientes cliente = cDAO.buscarPorIdCliente(IdCliente);
 			request.setAttribute("NomeCliente", cliente.getNmCliente());
 			
 			AtendimentoDAO aDAO = new AtendimentoDAO();
@@ -162,8 +158,6 @@ public class OrdemServicoServlet extends HttpServlet {
 						&& (request.getParameter("id") != null))){
 			
 			Integer Id = Integer.parseInt(request.getParameter("id"));
-			String CPF = "";
-			String CNPJ = "";
 			String Acao = "erro";
 			
 			request.setAttribute("IdOs", Id);
@@ -172,6 +166,7 @@ public class OrdemServicoServlet extends HttpServlet {
 			TbOs os = oDAO.selecionar(Id);
 			
 			Integer IdServico = os.getTbServico().getIdServico();
+			Integer IdCliente = os.getIdCliente();
 			
 			request.setAttribute("IdOs", Id);
 			request.setAttribute("IdServico", os.getTbServico().getIdServico());
@@ -183,12 +178,7 @@ public class OrdemServicoServlet extends HttpServlet {
 			request.setAttribute("slcStatus", os.slcStatus());
 			request.setAttribute("cssClass", os.cssClass());
 			request.setAttribute("NomeStatus", os.nomeStatus());
-			
-			if( os.getNrCpf() != null ){  CPF = os.getNrCpf(); } 
-			request.setAttribute("CPF", CPF);
-			
-			if( os.getNrCnpj() != null ){ CNPJ = os.getNrCnpj(); } 
-			request.setAttribute("CNPJ", CNPJ);
+			request.setAttribute("IdCliente", os.getIdCliente());
 			
 			if( os.getDtFim() != null ){ 
 				request.setAttribute("DtFim", Util.DateParaString(os.getDtFim(), "dd/MM/yyyy HH:mm:ss"));
@@ -208,7 +198,7 @@ public class OrdemServicoServlet extends HttpServlet {
 			Integer IdCategoria = categoria.getTbCategoria().getIdCategoria();
 			
 			ViewClienteDAO cDAO = new ViewClienteDAO();
-			ViewClientes cliente = cDAO.findByDoc(CPF, CNPJ);
+			ViewClientes cliente = cDAO.buscarPorIdCliente(IdCliente);
 			request.setAttribute("NomeCliente", cliente.getNmCliente());
 			
 			CategoriaDAO catDAO = new CategoriaDAO();
@@ -235,23 +225,17 @@ public class OrdemServicoServlet extends HttpServlet {
 						&& (request.getParameter("id") != null))){
 
 			Integer Id = Integer.parseInt(request.getParameter("id"));
-			String CPF = "";
-			String CNPJ = "";
 			
 			OsDAO oDAO = new OsDAO();
 			TbOs os = oDAO.selecionar(Id);
+			
+			Integer IdCliente = os.getIdCliente();
 			
 			request.setAttribute("IdOs", Id);
 			request.setAttribute("IdServico", os.getTbServico().getIdServico());
 			request.setAttribute("NomeServico", os.getTbServico().getNmServico());
 			request.setAttribute("DtGeracao", Util.DateParaString(os.getDtGeracao(), "dd/MM/yyyy HH:mm:ss"));
 						
-			if( os.getNrCpf() != null ){  CPF = os.getNrCpf(); } 
-			request.setAttribute("CPF", CPF);
-			
-			if( os.getNrCnpj() != null ){ CNPJ = os.getNrCnpj(); } 
-			request.setAttribute("CNPJ", CNPJ);
-			
 			request.setAttribute("Detalhe", os.getTxDetalhe());
 			
 			request.setAttribute("Kit", os.getCdKit());
@@ -264,7 +248,20 @@ public class OrdemServicoServlet extends HttpServlet {
 			}
 			
 			ViewClienteDAO cDAO = new ViewClienteDAO();
-			ViewClientes cliente = cDAO.findByDoc(CPF, CNPJ);
+			ViewClientes cliente = cDAO.buscarPorIdCliente(IdCliente);
+			
+			String CPF = "";
+			if(cliente.getCpf() != null){
+				CPF = cliente.getCpf();
+			}
+			request.setAttribute("CPF", CPF);
+			
+			String CNPJ = "";
+			if(cliente.getCnpj() != null){
+				CPF = cliente.getCnpj();
+			}
+			request.setAttribute("CNPJ", CNPJ);
+						
 			request.setAttribute("NomeCliente", cliente.getNmCliente());
 			
 			RequestDispatcher view = request.getRequestDispatcher("os/formVisualizar.jsp");

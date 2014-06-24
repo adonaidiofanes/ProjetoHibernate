@@ -78,10 +78,10 @@ function carregarPontos(pontos) {
 		var EnderecoCompleto = Cliente.Endereco + NumeroEndereco + Complemento + Cliente.Cidade + ", " + Cliente.UF;
 			EnderecoCompleto += CEP;
 			
-		var tplConteudo = "<p><strong>OS: #" + Agendamento.IdOS + "</strong> - ï¿½ltimo Contato: " + Agendamento.DtReporte +"</p>";
+		var tplConteudo = "<p><strong>OS: #" + Agendamento.IdOS + "</strong> - Último Contato: " + Agendamento.DtReporte +"</p>";
 			tplConteudo += "<p><strong>Status:</strong> "+ Agendamento.CdStatus +"</p>";
 			tplConteudo += "<p><strong>Cliente:</strong> "+ Cliente.NmCliente +"</p>";
-			tplConteudo += "<p><strong>Endereï¿½o:</strong> "+ EnderecoCompleto +"</p>";
+			tplConteudo += "<p><strong>Endereço:</strong> "+ EnderecoCompleto +"</p>";
 			tplConteudo += "<p><strong>Telefone / Celular:</strong> "+ Cliente.Telefone + " / " + Cliente.Celular +"</p>";
 			tplConteudo += "<p><strong>Email:</strong> "+ Cliente.Email +"</p>";
 			tplConteudo += "<p><strong>Equipe:</strong> PegarDadosdaEquipe / <strong>Smartphone: </strong> Agendamento.Smartphone </p>";

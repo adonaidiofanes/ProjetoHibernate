@@ -150,9 +150,10 @@ public class AtendimentoDAO {
     }
 	
 	public String pr_ins_agendamento(Integer idServico, Integer idCategoria,
-			String CPF, String CNPJ, String descricao,
+			Integer idCliente, String descricao,
 			Integer matriculaTecnico, Integer usuarioLogado, Integer idJanela,
 			Integer idEquipe, String dt_agendamento) {
+		
 		
 		String retorno = "";
 		
@@ -163,11 +164,10 @@ public class AtendimentoDAO {
 			session.beginTransaction();
 						
 			Query query = session.createSQLQuery(
-							"CALL pr_ins_agendamento(:p_id_servico, :p_id_categoria, :p_cpf, :p_cnpj, :p_tx_detalhe, :p_nr_matricula_tecnico, :p_nr_matricula_usuario, :p_id_janela, :p_id_equipe, :p_dt_agendamento)")
+							"CALL pr_ins_agendamento(:p_id_servico, :p_id_categoria, :p_id_cliente, :p_tx_detalhe, :p_nr_matricula_tecnico, :p_nr_matricula_usuario, :p_id_janela, :p_id_equipe, :p_dt_agendamento)")
 							.setParameter("p_id_servico", idServico)
 							.setParameter("p_id_categoria", idCategoria)
-							.setParameter("p_cpf", CPF)
-							.setParameter("p_cnpj", CNPJ)
+							.setParameter("p_id_cliente", idCliente)
 							.setParameter("p_tx_detalhe", descricao)
 							.setParameter("p_nr_matricula_tecnico", matriculaTecnico)
 							.setParameter("p_nr_matricula_usuario", usuarioLogado)

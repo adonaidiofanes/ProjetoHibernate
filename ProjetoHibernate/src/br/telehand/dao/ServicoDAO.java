@@ -119,6 +119,7 @@ public class ServicoDAO {
             session.getTransaction().rollback();
             retorno = e.getCause().getMessage().toString();
             
+            // Verificar se o servico ja esta sendo utilizado
             if(retorno.contains("foreign key constraint fails")){
             	retorno = "Você não pode apagar um serviço que já está sendo utilizado!";
             }

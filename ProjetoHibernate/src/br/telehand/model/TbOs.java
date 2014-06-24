@@ -30,8 +30,7 @@ public class TbOs implements java.io.Serializable {
 	private Integer idOs;
 	private TbServico tbServico;
 	private Date dtGeracao;
-	private String nrCpf;
-	private String nrCnpj;
+	private Integer idCliente;
 	private String txDetalhe;
 	private String cdKit;
 	private Character cdStatus;
@@ -45,13 +44,13 @@ public class TbOs implements java.io.Serializable {
 		this.tbServico = tbServico;
 	}
 
-	public TbOs(TbServico tbServico, Date dtGeracao, String nrCpf,
-			String nrCnpj, String txDetalhe, String cdKit, Character cdStatus,
+	public TbOs(TbServico tbServico, Date dtGeracao, 
+			Integer idCliente,
+			String txDetalhe, String cdKit, Character cdStatus,
 			Date dtFim, Set tbAtendimentos) {
 		this.tbServico = tbServico;
+		this.idCliente = idCliente;
 		this.dtGeracao = dtGeracao;
-		this.nrCpf = nrCpf;
-		this.nrCnpj = nrCnpj;
 		this.txDetalhe = txDetalhe;
 		this.cdKit = cdKit;
 		this.cdStatus = cdStatus;
@@ -90,22 +89,13 @@ public class TbOs implements java.io.Serializable {
 		this.dtGeracao = dtGeracao;
 	}
 
-	@Column(name = "Nr_cpf", length = 11)
-	public String getNrCpf() {
-		return this.nrCpf;
+	@Column(name = "Id_cliente")
+	public Integer getIdCliente() {
+		return this.idCliente;
 	}
 
-	public void setNrCpf(String nrCpf) {
-		this.nrCpf = nrCpf;
-	}
-
-	@Column(name = "Nr_cnpj", length = 14)
-	public String getNrCnpj() {
-		return this.nrCnpj;
-	}
-
-	public void setNrCnpj(String nrCnpj) {
-		this.nrCnpj = nrCnpj;
+	public void setIdCliente(Integer idCliente) {
+		this.idCliente = idCliente;
 	}
 
 	@Column(name = "Tx_detalhe", length = 65535)

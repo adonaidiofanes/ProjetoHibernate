@@ -61,7 +61,10 @@ public class ClienteServlet extends HttpServlet {
 		
 		JSONArray jArr = new JSONArray();
 		
-		if( (cliente != null) && cliente.getNmCliente() != null ){ jArr.put(cliente.getNmCliente()); }
+		if( (cliente != null) && cliente.getNmCliente() != null ){ 
+			jArr.put(cliente.getNmCliente()); 
+			jArr.put(cliente.getId_cliente());
+		}
 		
 		String resposta = jArr.toString();
 		response.setContentType("text/json;charset=utf-8");

@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version: 5.6.17)
-# Date: 2014-06-23 11:03:14
+# Date: 2014-06-24 15:33:28
 # Generator: MySQL-Front 5.3  (Build 2.28)
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -118,7 +118,7 @@ CREATE TABLE `tb_log` (
 # Data for table "tb_log"
 #
 
-INSERT INTO `tb_log` VALUES (1,'2014-04-16 15:14:48','operação de criação da O.S -6'),(1,'2014-04-16 15:15:43','operação de criação da O.S -7'),(1,'2014-04-17 00:26:11','operação de criação da O.S -8'),(1,'2014-04-17 00:46:29','operação de criação da O.S -9'),(1,'2014-04-17 00:54:34','operação de criação da O.S -10'),(1,'2014-04-17 00:55:33','operação de criação da O.S -11'),(1,'2014-04-29 19:05:34','operação de criação da O.S -12'),(1,'2014-04-29 19:54:54','operação de criação da O.S -13'),(1,'2014-04-29 20:09:54','operação de criação da O.S -14'),(1,'2014-04-30 16:09:02','operação de cancelamento do atendimento-12'),(1,'2014-04-30 16:41:13','operação de criação da O.S -15'),(1,'2014-04-30 16:41:24','operação de cancelamento do atendimento-13'),(1,'2014-04-30 19:41:38','operação de cancelamento do atendimento-13'),(1,'2014-04-30 19:43:22','operação de criação da O.S -16'),(1,'2014-04-30 21:12:22','operação de criação da O.S -17'),(1,'2014-04-30 21:12:36','operação de cancelamento do atendimento-15'),(1,'2014-05-01 23:08:47','operação de cancelamento do atendimento-11'),(1,'2014-05-01 23:10:27','operação de criação da O.S -18'),(1,'2014-05-01 23:10:57','operação de criação da O.S -19'),(1,'2014-05-01 23:11:54','operação de cancelamento do atendimento-17'),(1,'2014-05-01 23:23:22','operação de criação da O.S -20'),(1,'2014-05-01 23:23:33','operação de cancelamento do atendimento-18'),(1,'2014-05-13 20:27:31','operação de criação da O.S -21'),(1,'2014-05-13 20:27:43','operação de cancelamento do atendimento-19'),(1,'2014-05-13 20:36:15','operação de criação da O.S -22'),(1,'2014-05-13 20:38:56','operação de criação da O.S -23'),(1,'2014-05-13 20:43:16','operação de criação da O.S -24'),(1,'2014-05-22 21:08:57','operação de criação da O.S -25'),(1,'2014-05-30 11:41:48','operação de criação da O.S -26'),(1,'2014-05-30 12:00:12','operação de cancelamento do atendimento-24'),(1,'2014-05-30 14:14:35','operação de criação da O.S -28'),(1,'2014-05-30 14:33:28','operação de cancelamento do atendimento-26'),(1,'2014-05-30 14:33:29','operação de criação da O.S -29'),(1,'2014-05-30 15:57:38','operação de criação da O.S -30'),(1,'2014-06-04 14:47:06','operação de criação da O.S -31'),(1,'2014-06-04 14:53:31','operação de criação da O.S -32'),(1,'2014-06-04 14:57:14','operação de criação da O.S -33');
+INSERT INTO `tb_log` VALUES (1,'2014-04-16 15:14:48','operação de criação da O.S -6'),(1,'2014-04-16 15:15:43','operação de criação da O.S -7'),(1,'2014-04-17 00:26:11','operação de criação da O.S -8'),(1,'2014-04-17 00:46:29','operação de criação da O.S -9'),(1,'2014-04-17 00:54:34','operação de criação da O.S -10'),(1,'2014-04-17 00:55:33','operação de criação da O.S -11'),(1,'2014-04-29 19:05:34','operação de criação da O.S -12'),(1,'2014-04-29 19:54:54','operação de criação da O.S -13'),(1,'2014-04-29 20:09:54','operação de criação da O.S -14'),(1,'2014-04-30 16:09:02','operação de cancelamento do atendimento-12'),(1,'2014-04-30 16:41:13','operação de criação da O.S -15'),(1,'2014-04-30 16:41:24','operação de cancelamento do atendimento-13'),(1,'2014-04-30 19:41:38','operação de cancelamento do atendimento-13'),(1,'2014-04-30 19:43:22','operação de criação da O.S -16'),(1,'2014-04-30 21:12:22','operação de criação da O.S -17'),(1,'2014-04-30 21:12:36','operação de cancelamento do atendimento-15'),(1,'2014-05-01 23:08:47','operação de cancelamento do atendimento-11'),(1,'2014-05-01 23:10:27','operação de criação da O.S -18'),(1,'2014-05-01 23:10:57','operação de criação da O.S -19'),(1,'2014-05-01 23:11:54','operação de cancelamento do atendimento-17'),(1,'2014-05-01 23:23:22','operação de criação da O.S -20'),(1,'2014-05-01 23:23:33','operação de cancelamento do atendimento-18'),(1,'2014-05-13 20:27:31','operação de criação da O.S -21'),(1,'2014-05-13 20:27:43','operação de cancelamento do atendimento-19'),(1,'2014-05-13 20:36:15','operação de criação da O.S -22'),(1,'2014-05-13 20:38:56','operação de criação da O.S -23'),(1,'2014-05-13 20:43:16','operação de criação da O.S -24'),(1,'2014-05-22 21:08:57','operação de criação da O.S -25'),(1,'2014-05-30 11:41:48','operação de criação da O.S -26'),(1,'2014-05-30 12:00:12','operação de cancelamento do atendimento-24'),(1,'2014-05-30 14:14:35','operação de criação da O.S -28'),(1,'2014-05-30 14:33:28','operação de cancelamento do atendimento-26'),(1,'2014-05-30 14:33:29','operação de criação da O.S -29'),(1,'2014-05-30 15:57:38','operação de criação da O.S -30'),(1,'2014-06-04 14:47:06','operação de criação da O.S -31'),(1,'2014-06-04 14:53:31','operação de criação da O.S -32'),(1,'2014-06-04 14:57:14','operação de criação da O.S -33'),(1,'2014-06-24 15:15:08','operação de criação da O.S -31'),(1,'2014-06-24 15:29:17','operação de criação da O.S -32'),(1,'2014-06-24 15:32:05','operação de cancelamento do atendimento-26');
 
 #
 # Source for table "tb_login"
@@ -204,22 +204,21 @@ CREATE TABLE `tb_os` (
   `Id_OS` int(11) NOT NULL AUTO_INCREMENT,
   `Id_servico` int(11) NOT NULL,
   `Dt_geracao` datetime DEFAULT NULL,
-  `Nr_cpf` varchar(11) DEFAULT NULL,
-  `Nr_cnpj` varchar(14) DEFAULT NULL,
+  `Id_cliente` int(11) DEFAULT NULL,
   `Tx_detalhe` text,
   `Cd_kit` char(3) DEFAULT NULL,
-  `Cd_status` char(1) DEFAULT NULL COMMENT 'A - Aberta R – Reagendada P – Pendente C – Cancelada T - Atendida F - Finalizada',
-  `Dt_fim` datetime DEFAULT NULL COMMENT 'Data de finalização da O.S',
+  `Cd_status` char(1) DEFAULT NULL COMMENT 'A - Aberta R ? Reagendada P ? Pendente C ? Cancelada T - Atendida F - Finalizada',
+  `Dt_fim` datetime DEFAULT NULL COMMENT 'Data de finaliza??o da O.S',
   PRIMARY KEY (`Id_OS`),
   KEY `IDX_TB_OS` (`Id_servico`),
   CONSTRAINT `TB_SERVICO_TB_OS_FK1` FOREIGN KEY (`Id_servico`) REFERENCES `tb_servico` (`Id_servico`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "tb_os"
 #
 
-INSERT INTO `tb_os` VALUES (1,1,'2014-03-23 00:00:00','10000000001',NULL,'O cliente está solicitando um novo serviço!','1','S',NULL),(2,2,'2014-03-24 00:00:00','10000000002',NULL,'Outro detalhe!','2','S',NULL),(3,1,'2014-03-23 00:00:00','10000000003',NULL,'Algumas informações!','1','S',NULL),(6,1,'2014-04-16 15:14:48','10000000001','','dasdasdasdsadasdsadasdas','1','C',NULL),(7,1,'2014-04-16 15:15:43','10000000001','','sdasdasdasdadasdsa','1','F','2014-05-01 23:23:33'),(8,1,'2014-04-17 00:26:11','10000000001','','teste','1','C',NULL),(9,1,'2014-04-17 00:46:29','10000000001','','sadadas','1','C',NULL),(10,1,'2014-04-17 00:54:34','10000000001','','teste 123','1','C',NULL),(11,1,'2014-04-17 00:55:32','10000000001','','testeste','1','C',NULL),(12,1,'2014-04-29 19:05:34','10000000001','','teste 123','1','C',NULL),(13,1,'2014-04-29 19:54:54','10000000001','','dasdsadsa','1','X',NULL),(14,1,'2014-04-29 20:09:54','10000000001','','Teste','1','X',NULL),(15,1,'2014-04-30 16:41:13','10000000002','','TEste teste','1','X',NULL),(16,2,'2014-04-30 19:43:22','10000000002','','Instalacao requer  qndqime.','2','C',NULL),(17,1,'2014-04-30 21:12:22','10000000001','','Vamos','1','F','2014-05-01 23:23:33'),(18,1,'2014-05-01 23:10:27','10000000001','','TESTE','1','C',NULL),(19,1,'2014-05-01 23:10:57','10000000001','','teste','1','X','2014-05-01 23:23:33'),(20,1,'2014-05-01 23:23:22','10000000001','','dasdasda','1','X','2014-05-01 23:23:33'),(21,1,'2014-05-13 20:27:31','10000000001','','TESTE','1','X','2014-05-13 20:27:42'),(22,1,'2014-05-13 20:36:15','10000000001','','TESTE','1','S',NULL),(23,1,'2014-05-13 20:38:56','10000000001','','teste2','1','F','2014-05-13 20:27:42'),(24,1,'2014-05-13 20:43:16','10000000001','','123','1','X','2014-05-13 20:27:42'),(25,1,'2014-05-22 21:08:57','10000000001','','Testezinho','1','S',NULL),(26,1,'2014-05-30 11:41:48','10000000002','','123','1','X','2014-05-30 12:00:12'),(28,1,'2014-05-30 14:14:35','10000000002','','teste','1','X','2014-05-30 14:33:28'),(29,1,'2014-05-30 14:33:29','10000000002','','teste','1','C',NULL),(30,1,'2014-05-30 15:57:38','10000000001','','123','1','C',NULL),(31,1,'2014-06-04 14:47:06','10000000002','','123','1','C',NULL),(32,1,'2014-06-04 14:53:31','10000000002','','123','1','C',NULL),(33,5,'2014-06-04 14:57:14','10000000002','','123','1','C',NULL);
+INSERT INTO `tb_os` VALUES (1,1,'2014-03-23 00:00:00',1,'O cliente est? solicitando um novo servi?o!','1','S',NULL),(2,2,'2014-03-24 00:00:00',2,'Outro detalhe!','2','S',NULL),(3,1,'2014-03-23 00:00:00',3,'Algumas informa??es!','1','S',NULL),(4,1,'2014-04-16 15:14:48',1,'dasdasdasdsadasdsadasdas','1','C',NULL),(5,1,'2014-04-16 15:15:43',1,'sdasdasdasdadasdsa','1','F','2014-05-01 23:23:33'),(6,1,'2014-04-17 00:26:11',1,'teste','1','C',NULL),(7,1,'2014-04-17 00:46:29',1,'sadadas','1','C',NULL),(8,1,'2014-04-17 00:54:34',1,'teste 123','1','C',NULL),(9,1,'2014-04-17 00:55:32',1,'testeste','1','C',NULL),(10,1,'2014-04-29 19:05:34',1,'teste 123','1','C',NULL),(11,1,'2014-04-29 19:54:54',1,'dasdsadsa','1','X',NULL),(12,1,'2014-04-29 20:09:54',1,'Teste','1','X',NULL),(13,1,'2014-04-30 16:41:13',2,'TEste teste','1','X',NULL),(14,2,'2014-04-30 19:43:22',2,'Instalacao requer  qndqime.','2','C',NULL),(15,1,'2014-04-30 21:12:22',1,'Vamos','1','F','2014-05-01 23:23:33'),(16,1,'2014-05-01 23:10:27',1,'TESTE','1','C',NULL),(17,1,'2014-05-01 23:10:57',1,'teste','1','X','2014-05-01 23:23:33'),(18,1,'2014-05-01 23:23:22',1,'dasdasda','1','X','2014-05-01 23:23:33'),(19,1,'2014-05-13 20:27:31',1,'TESTE','1','X','2014-05-13 20:27:42'),(20,1,'2014-05-13 20:36:15',1,'TESTE','1','S',NULL),(21,1,'2014-05-13 20:38:56',1,'teste2','1','F','2014-05-13 20:27:42'),(22,1,'2014-05-13 20:43:16',1,'123','1','X','2014-05-13 20:27:42'),(23,1,'2014-05-22 21:08:57',1,'Testezinho','1','C',NULL),(24,1,'2014-05-30 11:41:48',2,'123','1','X','2014-05-30 12:00:12'),(25,1,'2014-05-30 14:14:35',2,'teste','1','X','2014-05-30 14:33:28'),(26,1,'2014-05-30 14:33:29',2,'teste1','1','F',NULL),(27,1,'2014-05-30 15:57:38',1,'123','1','C',NULL),(31,1,'2014-06-24 15:15:08',2,'111111','1','C',NULL),(32,1,'2014-06-24 15:29:17',2,'111111','1','X','2014-06-24 15:32:05');
 
 #
 # Source for table "tb_janela"
@@ -330,13 +329,13 @@ CREATE TABLE `tb_atendimento` (
   CONSTRAINT `TB_AGENDA_TB_ATENDIMENTO_FK1` FOREIGN KEY (`Id_janela`, `Id_equipe`) REFERENCES `tb_agenda` (`Id_janela`, `Id_equipe`),
   CONSTRAINT `TB_CATEGORIA_TB_ATENDIMENTO_FK1` FOREIGN KEY (`Id_categoria`) REFERENCES `tb_categoria` (`Id_categoria`),
   CONSTRAINT `TB_OS_TB_ATENDIMENTO_FK1` FOREIGN KEY (`Id_OS`) REFERENCES `tb_os` (`Id_OS`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "tb_atendimento"
 #
 
-INSERT INTO `tb_atendimento` VALUES (1,1,'2014-04-01 09:00:00',1,'A',1,1,1),(2,2,'2014-04-02 09:00:00',2,'A',2,2,1),(3,3,'2014-04-03 10:00:00',1,'A',1,1,1),(4,6,'2014-04-16 15:14:48',1,'A',3,1,1),(5,7,'2014-04-16 15:15:43',1,'A',3,1,1),(6,8,'2014-04-17 00:26:11',1,'A',1,1,1),(7,9,'2014-04-18 09:00:00',1,'A',1,1,1),(8,10,'2014-04-15 09:00:00',1,'A',1,1,1),(9,11,'2014-04-19 16:00:00',1,'A',5,1,1),(10,12,'2014-04-28 09:00:00',1,'A',1,1,1),(11,13,'2014-04-29 09:00:00',1,'C',1,1,1),(12,14,'2014-04-30 11:00:00',1,'C',3,1,1),(13,15,'2014-04-30 16:00:00',1,'C',5,1,1),(14,16,'2014-04-28 09:00:00',2,'P',2,2,1),(15,17,'2014-04-30 11:00:00',1,'C',3,1,1),(16,18,'2014-04-30 11:00:00',1,'A',3,1,1),(17,19,'2014-05-03 11:00:00',1,'C',3,1,1),(18,20,'2014-05-03 11:00:00',1,'C',3,1,1),(19,21,'2014-05-13 09:00:00',1,'C',1,1,1),(20,22,'2014-05-14 11:00:00',1,'P',3,1,1),(21,23,'2014-05-14 16:00:00',1,'E',5,1,1),(22,24,'2014-05-20 09:00:00',1,'R',1,1,1),(23,25,'2014-05-26 09:00:00',1,'A',1,1,1),(24,26,'2014-05-31 11:00:00',1,'C',3,1,1),(26,28,'2014-05-31 11:00:00',1,'C',3,1,1),(27,29,'2014-06-02 09:00:00',1,'A',1,1,1),(28,30,'2014-05-31 11:00:00',1,'A',3,1,1),(29,31,'2014-06-04 11:00:00',1,'A',3,1,1),(30,32,'2014-06-04 16:00:00',1,'R',5,1,1),(31,33,'2014-06-07 11:00:00',1,'A',3,1,1);
+INSERT INTO `tb_atendimento` VALUES (1,1,'2014-04-01 09:00:00',1,'A',1,1,1),(2,2,'2014-04-02 09:00:00',2,'A',2,2,1),(3,3,'2014-04-03 10:00:00',1,'A',1,1,1),(4,6,'2014-04-16 15:14:48',1,'A',3,1,1),(5,7,'2014-04-16 15:15:43',1,'A',3,1,1),(6,8,'2014-04-17 00:26:11',1,'A',1,1,1),(7,9,'2014-04-18 09:00:00',1,'A',1,1,1),(8,10,'2014-04-15 09:00:00',1,'A',1,1,1),(9,11,'2014-04-19 16:00:00',1,'A',5,1,1),(10,12,'2014-04-28 09:00:00',1,'A',1,1,1),(11,13,'2014-04-29 09:00:00',1,'C',1,1,1),(12,14,'2014-04-30 11:00:00',1,'C',3,1,1),(13,15,'2014-04-30 16:00:00',1,'C',5,1,1),(14,16,'2014-04-28 09:00:00',2,'P',2,2,1),(15,17,'2014-04-30 11:00:00',1,'C',3,1,1),(16,18,'2014-04-30 11:00:00',1,'A',3,1,1),(17,19,'2014-05-03 11:00:00',1,'C',3,1,1),(18,20,'2014-05-03 11:00:00',1,'C',3,1,1),(19,21,'2014-05-13 09:00:00',1,'C',1,1,1),(20,22,'2014-05-14 11:00:00',1,'P',3,1,1),(21,23,'2014-05-14 16:00:00',1,'E',5,1,1),(22,24,'2014-05-20 09:00:00',1,'R',1,1,1),(23,25,'2014-05-26 09:00:00',1,'A',1,1,1),(24,26,'2014-05-31 11:00:00',1,'P',3,1,2),(25,31,'2014-06-24 09:00:00',1,'R',1,1,1),(26,32,'2014-06-25 11:00:00',1,'C',3,1,1);
 
 #
 # Source for table "tb_reporte"
@@ -613,8 +612,7 @@ DROP PROCEDURE IF EXISTS `pr_ins_agendamento`;
 CREATE PROCEDURE `pr_ins_agendamento`(
         IN  p_id_servico                      INT(2), 
         IN  p_id_categoria                    INT(2), 
-        IN  p_cpf                             VARCHAR(11), 
-        IN  p_cnpj                            VARCHAR(14), 
+        IN  p_id_cliente                      INT(11), 
         IN  p_tx_detalhe                      TEXT(500),
         IN  p_nr_matricula_tecnico            INT (11),
         IN  p_nr_matricula_usuario            INT (11),
@@ -628,8 +626,7 @@ BEGIN
          values (0,
                  p_id_servico,
                  sysdate(),
-                 p_cpf,
-                 p_cnpj,
+                 p_id_cliente,
                  p_tx_detalhe,
                  (select cd_kit from vw_almoxarife a WHERE a.id_servico = p_id_servico),
                  'C',

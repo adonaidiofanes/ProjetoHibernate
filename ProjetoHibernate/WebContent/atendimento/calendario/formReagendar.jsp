@@ -37,12 +37,14 @@
 	// pegar tx_detalhe
 	String descricao = os.getTxDetalhe();
 	
-	// pegar cpf ou cnpj
-	String CPF = os.getNrCpf();
-	String CNPJ = os.getNrCnpj();
-	
 	ViewClienteDAO clienteDAO = new ViewClienteDAO();
-	ViewClientes cliente = clienteDAO.findByDoc(CPF, CNPJ);
+	ViewClientes cliente = clienteDAO.buscarPorIdCliente(os.getIdCliente());
+	
+	// pegar cpf ou cnpj
+	String CPF = cliente.getCpf();
+	String CNPJ = cliente.getCnpj();
+	
+	Integer idCliente = os.getIdCliente();
 	
 	CategoriaDAO DAOCategoria = new CategoriaDAO();
 	
@@ -73,7 +75,7 @@
 						<div class="col-md-12">
 							<div class="form-group">
 							
-								<% if( CPF != "" && CPF != "0" && !CPF.isEmpty() ){ %>
+								<% if( CPF!=null && CPF != "" && CPF != "0" && !CPF.isEmpty() ){ %>
 								<div class="controle-cpf">
 									<label for="nome" class="col-sm-2 control-label">Cliente</label>
 									<div class="col-sm-10">
@@ -82,7 +84,7 @@
 								</div>
 								<% } %>
 								
-								<% if( CNPJ != "" && CNPJ != "0" && !CNPJ.isEmpty() ){ %>
+								<% if( CNPJ != null && CNPJ != "" && CNPJ != "0" && !CNPJ.isEmpty() ){ %>
 								<div class="controle-cnpj">
 									<label for="razao" class="col-sm-2 control-label">Razão Social</label>
 									<div class="col-sm-10">
@@ -124,13 +126,13 @@
 							<input type="hidden" id="idJanela" name="idJanela" value="<%= idJanela %>">
 							<input type="hidden" id="matriculaTecnico" name="matriculaTecnico" value="<%= matriculaTecnico %>">
 							<input type="hidden" id="dt_agendamento" name="dt_agendamento" value="<%= dt_agendamento %>">
+							<input type="hidden" id="idcliente" name="idcliente" value="<%= idCliente %>">
 							
-							
-							<% if( CPF != "" && CPF != "0" && !CPF.isEmpty() ){ %>
+							<% if( CPF != null && CPF != "" && CPF != "0" && !CPF.isEmpty() ){ %>
 							<input type="hidden" class="form-control" name="cpf" id="cpf" class="" value="<%=CPF%>">
 							<% } %>
 							
-							<% if( CNPJ != "" && CNPJ != "0" && !CNPJ.isEmpty() ){ %>
+							<% if( CNPJ != null && CNPJ != "" && CNPJ != "0" && !CNPJ.isEmpty() ){ %>
 							<input type="hidden" class="form-control" name="cnpj" id="cnpj" class="" value="<%=CNPJ%>">
 							<% } %>
 							

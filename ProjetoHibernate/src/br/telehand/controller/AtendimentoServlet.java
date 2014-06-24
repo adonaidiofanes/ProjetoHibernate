@@ -62,14 +62,14 @@ public class AtendimentoServlet extends HttpServlet {
 			Integer idJanela = Integer.parseInt(request.getParameter("idJanela").toString());
 			Integer idEquipe = Integer.parseInt(request.getParameter("idEquipe").toString());
 			String dt_agendamento = request.getParameter("dt_agendamento").toString();
+			Integer idCliente = Integer.parseInt(request.getParameter("idcliente").toString());
 			
 			AtendimentoDAO aDAO = new AtendimentoDAO();
 			
-			// Chamar procedure
+			// Chamar procedure 
 			String resultadoProc = aDAO.pr_ins_agendamento(idServico, 
 					1, 
-					CPF, 
-					CNPJ, 
+					idCliente,
 					descricao,
 					matriculaTecnico, 
 					usuarioLogado, 
@@ -80,7 +80,7 @@ public class AtendimentoServlet extends HttpServlet {
 			if( resultadoProc.equals("sucesso") ){
 				resultadoProc = "<div class='alert alert-success'>Agendamento cadastrado com sucesso!</div>";
 			} else if( resultadoProc.equals("erro") ){
-				resultadoProc = "<div class='alert alert-danger'>Nï¿½o foi possï¿½vel cadastrar o agendamento!</div>";
+				resultadoProc = "<div class='alert alert-danger'>Não foi possível cadastrar o agendamento!</div>";
 			} else {
 				resultadoProc = "";
 			}
@@ -113,7 +113,7 @@ public class AtendimentoServlet extends HttpServlet {
 				if( resultadoProc.equals("sucesso") ){
 					resultadoProc = "<div class='alert alert-success'>Atendimento cancelado com sucesso!</div>";
 				} else if( resultadoProc.equals("erro") ){
-					resultadoProc = "<div class='alert alert-danger'>Nï¿½o foi possï¿½vel cancelar o atendimento!</div>";
+					resultadoProc = "<div class='alert alert-danger'>Não foi possível cancelar o atendimento!</div>";
 				} else {
 					resultadoProc = "";
 				}
@@ -146,6 +146,7 @@ public class AtendimentoServlet extends HttpServlet {
 			Integer usuarioLogado = Integer.parseInt(request.getParameter("usuarioLogado").toString());
 			Integer idJanela = Integer.parseInt(request.getParameter("idJanela").toString());
 			Integer idEquipe = Integer.parseInt(request.getParameter("idEquipe").toString());
+			Integer idCliente = Integer.parseInt(request.getParameter("idcliente").toString());
 			String dt_agendamento = request.getParameter("dt_agendamento").toString();
 			String CPF = "";
 			String CNPJ = "";
@@ -177,8 +178,7 @@ public class AtendimentoServlet extends HttpServlet {
 			String resultadoProcIns = aDAO.pr_ins_agendamento(
 					IdServico, 
 					1, 
-					CPF, 
-					CNPJ, 
+					idCliente,
 					descricao,
 					pMatTec,
 					usuarioLogado, 
@@ -239,21 +239,16 @@ public class AtendimentoServlet extends HttpServlet {
 				JSONObject jObj2 = new JSONObject();
 				jObj2.put("tbAgendamento", jObj);
 				
-				String CNPJ = "";
-				String CPF = "";
+				Integer idCliente = 0;
 				
-				if( (agendamento.getTbOs().getNrCnpj()) != null ){
-					CNPJ = agendamento.getTbOs().getNrCnpj().toString();
-				}
-				
-				if( (agendamento.getTbOs().getNrCpf()) != null ){
-					CPF = agendamento.getTbOs().getNrCpf().toString();
+				if( (agendamento.getTbOs().getIdCliente()) != null ){
+					idCliente = agendamento.getTbOs().getIdCliente();
 				}
 				
 				// Resgatar dados do cliente
 				ViewClienteDAO vDAO = new ViewClienteDAO();
 				
-				ViewClientes cliente = vDAO.findByDoc(CPF,CNPJ);
+				ViewClientes cliente = vDAO.buscarPorIdCliente(idCliente);
 				
 				JSONObject jObjC = new JSONObject();
 				jObjC.put("IdCliente", cliente.getId_cliente());
@@ -329,21 +324,16 @@ public class AtendimentoServlet extends HttpServlet {
 				JSONObject jObj2 = new JSONObject();
 				jObj2.put("tbAgendamento", jObj);
 				
-				String CNPJ = "";
-				String CPF = "";
+				Integer idCliente = 0;
 				
-				if( (agendamento.getTbOs().getNrCnpj()) != null ){
-					CNPJ = agendamento.getTbOs().getNrCnpj().toString();
-				}
-				
-				if( (agendamento.getTbOs().getNrCpf()) != null ){
-					CPF = agendamento.getTbOs().getNrCpf().toString();
+				if( (agendamento.getTbOs().getIdCliente()) != null ){
+					idCliente = agendamento.getTbOs().getIdCliente();
 				}
 				
 				// Resgatar dados do cliente
 				ViewClienteDAO vDAO = new ViewClienteDAO();
 				
-				ViewClientes cliente = vDAO.findByDoc(CPF,CNPJ);
+				ViewClientes cliente = vDAO.buscarPorIdCliente(idCliente);
 				
 				JSONObject jObjC = new JSONObject();
 				jObjC.put("IdCliente", cliente.getId_cliente());

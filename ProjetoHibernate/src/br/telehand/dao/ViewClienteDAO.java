@@ -49,5 +49,33 @@ public class ViewClienteDAO {
 			throw re;
 		}
 	}
+	
+	public ViewClientes buscarPorIdCliente(Integer idCliente) {
+		
+		log.debug("getting ViewClientes instance with IdCliente: " + idCliente);
+		
+		try {
+			
+			Session session = Util.getSessionFactory().openSession();
+			
+	        org.hibernate.Criteria criteria = session.createCriteria(ViewClientes.class);
+	        
+	        ViewClientes retorno = null;
+	        
+        	retorno = (ViewClientes) criteria.add(Restrictions.eq("id_cliente", idCliente)).uniqueResult();
+	        
+			if (retorno == null) {
+				log.debug("ViewClientes encontrado");
+			} else {
+				log.debug("ViewClientes nao encontrado");
+			}
+			
+			return retorno;
+			
+		} catch (RuntimeException re) {
+			log.error("get failed", re);
+			throw re;
+		}
+	}
 
 }
