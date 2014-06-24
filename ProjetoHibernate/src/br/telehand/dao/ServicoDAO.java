@@ -113,12 +113,15 @@ public class ServicoDAO {
             TbServico auxiliar = (TbServico) session.get(TbServico.class, servico.getIdServico());
             session.delete(auxiliar);
             session.getTransaction().commit();
-            retorno = "Serviï¿½o apagado com sucesso!";
+            retorno = "Serviço apagado com sucesso!";
         } catch (Exception e) {
             retorno = "Ocorreu um erro ao apagar o serviÃ§o!";
             session.getTransaction().rollback();
-            retorno = e.getMessage();
-            retorno = e.getCause().toString();
+            retorno = e.getCause().getMessage().toString();
+            
+            if(retorno.contains("foreign key constraint fails")){
+            	retorno = "Você não pode apagar um serviço que já está sendo utilizado!";
+            }
             
         } finally {
             session.close();

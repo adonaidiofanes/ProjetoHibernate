@@ -81,16 +81,12 @@ public class ServicoServlet extends HttpServlet {
 
 				String msg = DAO.apagar(s);
 				
-				System.out.println("=======================");
-				System.out.println(msg);
-				System.out.println("=======================");
-				
-				//request.setAttribute("msgStatus", msg);
-				//RequestDispatcher view = request.getRequestDispatcher("servico/index.jsp");
-				//view.forward(request, response);
+				request.setAttribute("msgStatus", msg);
+				RequestDispatcher view = request.getRequestDispatcher("servico/index.jsp");
+				view.forward(request, response);
 				
 			} else {
-				System.out.println("Erro ao selecionar o serviï¿½o a ser apagado!");
+				System.out.println("Erro ao selecionar o serviço a ser apagado!");
 			}
 			
 		} // FIM APAGAR SERVICO
