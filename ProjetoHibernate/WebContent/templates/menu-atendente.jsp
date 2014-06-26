@@ -21,6 +21,14 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav">
 		  
+			<!-- Consultas -->
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consultas <b class="caret"></b></a>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="/ProjetoHibernate/atendimento/calendario/">Atendimentos por cliente</a></li>
+			  </ul>
+			</li>
+			
 			<li><a href="/ProjetoHibernate/atendimento/calendario/">Atendimentos</a></li>
 			
 		  </ul>

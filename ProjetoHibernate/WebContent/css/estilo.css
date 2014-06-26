@@ -2,7 +2,7 @@
 .infoBox p { padding: 0 15px }
 .infoBox:before { border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid #3fa7d8; top: -10px; content: ""; height: 0; position: absolute; width: 0; left: 138px }
 
-.logoPrincipal { background: url(../img/logo.png) no-repeat; font-size: 0px; text-indent: -9999px; height: 100px; display: block; }
+.logoPrincipal { background: url(../img/logo.png) no-repeat; font-size: 0px; text-indent: -9999px; height: 65px; display: block; margin-top:20px; }
 
 #mapa img{max-width:none;}
 

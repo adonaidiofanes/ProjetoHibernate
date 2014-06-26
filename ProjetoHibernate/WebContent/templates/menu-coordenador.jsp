@@ -21,17 +21,30 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav">
 		  
+		  	<!-- Parametros -->
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Parâmetros <b class="caret"></b></a>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="#">Equipe</a></li>
+				<li><a href="#">Janela</a></li>
+				<li><a href="#">Agenda</a></li>
+			  </ul>
+			</li>
+		  
+			<!-- Consultas -->
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consultas <b class="caret"></b></a>
 			  <ul class="dropdown-menu" role="menu">
 				<li><a href="/ProjetoHibernate/atendimento/">Endereços de Atendimentos</a></li>
-				<li><a href="/ProjetoHibernate/reporte">Posicionamento das equipes </a></li>
+				<li><a href="/ProjetoHibernate/reporte">Posicionamento das equipes</a></li>
+				<li><a href="#">Tempo médio de atendimento</a></li>
+				<li><a href="#">Número de atendimentos</a></li>
+				<li><a href="#">Atendimentos por técnico</a></li>
+				<li><a href="#">Atendimentos de recuperação</a></li>
 			  </ul>
 			</li>
 			
 			<li><a href="/ProjetoHibernate/OrdemServicoServlet.do?Controle=listar">O.S.</a></li>
-			
-			<li><a href="/ProjetoHibernate/atendimento/calendario/">Atendimentos</a></li>
 			
 		  </ul>
 

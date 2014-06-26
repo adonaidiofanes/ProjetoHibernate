@@ -20,6 +20,10 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
+		  <ul class="nav navbar-nav">
+		  	<li><a href="/ProjetoHibernate/OrdemServicoServlet.do?Controle=listar">O.S.</a></li>
+		  </ul>
+
 		  <ul class="nav navbar-nav navbar-right">
 		  	<li><a href="#" class="button"><span class="glyphicon glyphicon-user"></span> <%= nomeUsuario %></a></li>
 			<li><a href="/ProjetoHibernate/sair.jsp"><span class="glyphicon glyphicon-remove"></span> Sair</a></li>
