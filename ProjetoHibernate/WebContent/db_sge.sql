@@ -577,38 +577,38 @@ CREATE VIEW `vw_dados_rh` AS
 #
 
 DROP PROCEDURE IF EXISTS `pr_del_agendamento`;
+
+DELIMITER $$
 CREATE PROCEDURE `pr_del_agendamento`(
         IN  p_id_os                           INT(2), 
         IN  p_id_atendimento                  INT(2), 
         IN  p_nr_matricula_usuario            INT (11) 
-
      )
+	 
 BEGIN 
-          
-
-    UPDATE tb_os 
-         set cd_status = 'X', dt_fim = NOW()
+    UPDATE tb_os t
+		set t.cd_status = 'X', t.dt_fim = NOW()
         where id_os = p_id_os;
-
-
+		
     UPDATE TB_ATENDIMENTO 
-         set cd_status = 'C'
+		set cd_status = 'C'
         where id_atendimento = p_id_atendimento;
-
-              
-                                 
+		
     INSERT INTO TB_LOG VALUES ( p_nr_matricula_usuario,
-                             sysdate(), 
-                             concat('operação de cancelamento do atendimento', '-' , p_id_atendimento)); 
-                             
-                                 
-END;
+								sysdate(), 
+								concat('operação de cancelamento do atendimento', '-' , p_id_atendimento));
+							 
+END $$
+DELIMITER ;
+
 
 #
 # Source for procedure "pr_ins_agendamento"
 #
 
 DROP PROCEDURE IF EXISTS `pr_ins_agendamento`;
+
+DELIMITER $$
 CREATE PROCEDURE `pr_ins_agendamento`(
         IN  p_id_servico                      INT(2), 
         IN  p_id_categoria                    INT(2), 
@@ -628,9 +628,8 @@ BEGIN
                  sysdate(),
                  p_id_cliente,
                  p_tx_detalhe,
-                 (select cd_kit from vw_almoxarife a WHERE a.id_servico = p_id_servico),
-                 'C',
-                 null);
+                 (select cd_kit from vw_almoxarife a WHERE a.id_servico = p_id_servico), 
+                 'C', null);
        
                  
     INSERT INTO TB_ATENDIMENTO VALUES (0,
@@ -645,9 +644,9 @@ BEGIN
     INSERT INTO TB_LOG VALUES ( p_nr_matricula_usuario,
                              sysdate(), 
                              concat('operação de criação da O.S ', '-' , (select max(id_os) from tb_os))); 
-                             
                                  
-END;
+END $$
+DELIMITER ;
 
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
