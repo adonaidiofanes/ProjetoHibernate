@@ -1,6 +1,6 @@
 <%@page import="br.telehand.util.Util"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <%
 	// Resgatar dados do servico a ser editado
 	String IdOs = request.getAttribute("IdOs").toString();
@@ -48,7 +48,7 @@
 
 				<div class="panel-body">
 				
-					<h3>OS NÚMERO: #<%=IdOs %> <span class="<%= cssClass %>"><span class="glyphicon glyphicon-arrow-right"></span> Status: <%= NomeStatus %></span></h3>
+					<h3>OS NÃšMERO: #<%=IdOs %> <span class="<%= cssClass %>"><span class="glyphicon glyphicon-arrow-right"></span> Status: <%= NomeStatus %></span></h3>
 					<hr />
 					
 					<form class="form-horizontal" role="form" form method="post"
@@ -67,7 +67,7 @@
 							</div>
 
 							<div class="form-group">								
-								<label for="slcServico" class="col-sm-4 control-label">Serviço</label>
+								<label for="slcServico" class="col-sm-4 control-label">ServiÃ§o</label>
 								<div class="col-sm-8">
 									<%= Servico %>
 								</div>
@@ -75,7 +75,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="DtGeracao" class="col-sm-4 control-label">Data de Criação</label>
+								<label for="DtGeracao" class="col-sm-4 control-label">Data de CriaÃ§Ã£o</label>
 								<div class="col-sm-8">
 									<input type="text" class="form-control" id="DtGeracao"
 										name="DtGeracao" class="" 
@@ -116,7 +116,7 @@
 							<% if(!DtFim.equals("")){ %>
 							<div class="form-group">
 								<label for="DtFim" class="col-sm-4 control-label">
-								Data de Finalização</label>
+								Data de FinalizaÃ§Ã£o</label>
 								<div class="col-sm-8">
 									<input type="text" class="form-control" id="DtFim"
 										name="DtFim" class="" 

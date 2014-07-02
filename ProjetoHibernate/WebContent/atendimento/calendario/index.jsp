@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Calendário de atendimentos</title>
+<title>CalendÃ¡rio de atendimentos</title>
 
 <jsp:include page="../../templates/scripts.jsp"></jsp:include>
 <jsp:include page="../../templates/estilos.jsp"></jsp:include>
@@ -31,7 +31,7 @@
 		<% 	
 				} else {
 		%>
-				<div class='alert alert-danger'>Não foi possível cadastrar o agendamento!</div>
+				<div class='alert alert-danger'>NÃ£o foi possÃ­vel cadastrar o agendamento!</div>
 		<%
 				}
 			}
@@ -41,11 +41,11 @@
 			<div class="btn-group">
 				<button class="btn btn-primary" data-calendar-nav="prev"><< Anterior</button>
 				<button class="btn" data-calendar-nav="today">Hoje</button>
-				<button class="btn btn-primary" data-calendar-nav="next">Próximo >></button>
+				<button class="btn btn-primary" data-calendar-nav="next">PrÃ³ximo >></button>
 			</div>
 			<div class="btn-group">
 				<button class="btn btn-warning" data-calendar-view="year">Ano</button>
-				<button class="btn btn-warning active" data-calendar-view="month">Mês</button>
+				<button class="btn btn-warning active" data-calendar-view="month">MÃªs</button>
 				<button class="btn btn-warning" data-calendar-view="week">Semana</button>
 				<button class="btn btn-warning" data-calendar-view="day">Dia</button>
 			</div>

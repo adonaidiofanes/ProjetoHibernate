@@ -1,12 +1,12 @@
 <%@page import="br.telehand.dao.AtendimentoDAO"%>
 <%@page import="br.telehand.dao.ServicoDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Endereços de atendimento</title>
+	<title>EndereÃ§os de atendimento</title>
 	
 	<jsp:include page="../templates/scripts.jsp"></jsp:include>
 	<jsp:include page="../templates/estilos.jsp"></jsp:include>
@@ -25,7 +25,7 @@
 	<div class="row-fluid">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-			<h3 class="panel-title">Endereços de atendimento</h3>
+			<h3 class="panel-title">EndereÃ§os de atendimento</h3>
 			</div>
 			<div class="panel-body">
 			<form method="POST" action="AgendamentoServlet.do" id="frmBuscarAgendamento">
@@ -38,7 +38,7 @@
 				</div -->
 				
 				<div class="col-sm-6">
-					<label>Tipo(s) de Serviço(s)</label>
+					<label>Tipo(s) de ServiÃ§o(s)</label>
 					<%= "<select name='slcServico' id='slcServico' class='form-control'>" +  DAOServico.gerarOptions(0) + "</select>" %>
 				</div>
 				

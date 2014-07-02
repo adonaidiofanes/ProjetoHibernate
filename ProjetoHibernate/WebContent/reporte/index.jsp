@@ -1,6 +1,6 @@
 <%@page import="br.telehand.dao.ServicoDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,13 +37,13 @@
 				</div -->
 
 							<div class="col-sm-6">
-								<label>Tipo(s) de Serviço(s)</label>
+								<label>Tipo(s) de ServiÃ§o(s)</label>
 								<%="<select name='slcServico' id='slcServico' class='form-control'>"
 					+ DAOServico.gerarOptions(0) + "</select>"%>
 								<!-- select multiple="multiple" class="form-control">
-						<option>001 - Instalação de Banda Larga 2M</option>
-						<option>002 - Instalação de Banda Larga 10M</option>
-						<option>003 - Instalação de Banda Larga 15M</option>
+						<option>001 - InstalaÃ§Ã£o de Banda Larga 2M</option>
+						<option>002 - InstalaÃ§Ã£o de Banda Larga 10M</option>
+						<option>003 - InstalaÃ§Ã£o de Banda Larga 15M</option>
 					</select-->
 							</div>
 

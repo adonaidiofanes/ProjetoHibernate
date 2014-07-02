@@ -8,12 +8,12 @@
 <%@page import="java.util.List"%>
 <%@page import="br.telehand.dao.ServicoDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Serviços</title>
+<title>ServiÃ§os</title>
 
 <jsp:include page="../templates/scripts.jsp"></jsp:include>
 <jsp:include page="../templates/estilos.jsp"></jsp:include>
@@ -26,8 +26,8 @@
 		<jsp:include page="../templates/menu.jsp"></jsp:include>
 
 		<ol class="breadcrumb">
-			<li><a href="#">Parâmetros</a></li>
-			<li class="active">Serviços</li>
+			<li><a href="#">ParÃ¢metros</a></li>
+			<li class="active">ServiÃ§os</li>
 		</ol>
 		
 		<div class="mensagemRetorno alert alert-info display-none"></div>
@@ -40,7 +40,7 @@
 		
 			String titulo;
 			if(request.getAttribute("resultadoBusca") != null){ titulo = "Resultado da busca"; }
-			else { titulo = "Gerenciar Serviços"; }
+			else { titulo = "Gerenciar ServiÃ§os"; }
 		
 		%>
 
@@ -63,11 +63,11 @@
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>Nome do serviço</th>
+								<th>Nome do serviÃ§o</th>
 								<th>Qt Inicio</th>
 								<th>Qt Fim</th>
 								<th>Qt Emp</th>
-								<th>Data Vigência</th>
+								<th>Data VigÃªncia</th>
 								<th></th>
 								<th></th>
 							</tr>
@@ -120,13 +120,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Apagar Serviço</h4>
+        <h4 class="modal-title" id="myModalLabel">Apagar ServiÃ§o</h4>
       </div>
       <div class="modal-body">
-        <p>Você tem certeza que deseja apagar o servico?</p>
+        <p>VocÃª tem certeza que deseja apagar o servico?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">NÃ£o</button>
         <button type="submit" class="btn btn-primary confirmar-apagar-servico">Sim</button>
       </div>
     </div>
@@ -135,7 +135,7 @@
     </form>
   </div>
 </div>
-<!-- FIM Modal de confirmação -->
+<!-- FIM Modal de confirmaÃ§Ã£o -->
 			
 		</div><!-- /container -->
 

@@ -7,12 +7,12 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Ordens de Serviços</title>
+<title>Ordens de ServiÃ§os</title>
 
 <jsp:include page="../templates/scripts.jsp"></jsp:include>
 <jsp:include page="../templates/estilos.jsp"></jsp:include>
@@ -25,7 +25,7 @@
 		<jsp:include page="../templates/menu.jsp"></jsp:include>
 
 		<ol class="breadcrumb">
-			<li><a href="#">Ordens de Serviços</a></li>
+			<li><a href="#">Ordens de ServiÃ§os</a></li>
 			<li class="active">Listagem das O.S.</li>
 		</ol>
 		
@@ -48,7 +48,7 @@
 			<div class="panel panel-primary">
 
 				<div class="panel-heading">
-					<h3 class="panel-title">Ordens de Serviços</h3>
+					<h3 class="panel-title">Ordens de ServiÃ§os</h3>
 				</div>				
 				
 				<% 
@@ -61,11 +61,11 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>Número</th>
-								<th>Serviço</th>
-								<th>Data de Criação</th>
+								<th>NÃºmero</th>
+								<th>ServiÃ§o</th>
+								<th>Data de CriaÃ§Ã£o</th>
 								<th>Status</th>
-								<th>Ações</th>
+								<th>AÃ§Ãµes</th>
 							</tr>
 						</thead>
 
@@ -90,7 +90,7 @@
 
 									  <div class="btn-group btn-group-xs">
 									    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-									      <span class="glyphicon glyphicon-cog"></span> Ações
+									      <span class="glyphicon glyphicon-cog"></span> AÃ§Ãµes
 									      <span class="caret"></span>
 									    </button>
 									    <ul class="dropdown-menu">
@@ -132,13 +132,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Apagar Serviço</h4>
+        <h4 class="modal-title" id="myModalLabel">Apagar ServiÃ§o</h4>
       </div>
       <div class="modal-body">
-        <p>Você tem certeza que deseja apagar o servico?</p>
+        <p>VocÃª tem certeza que deseja apagar o servico?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">NÃ£o</button>
         <button type="submit" class="btn btn-primary confirmar-apagar-servico">Sim</button>
       </div>
     </div>
@@ -147,7 +147,7 @@
     </form>
   </div>
 </div>
-<!-- FIM Modal de confirmação -->
+<!-- FIM Modal de confirmaÃ§Ã£o -->
 			
 		</div><!-- /container -->
 

@@ -3,7 +3,7 @@
 <%@page import="br.telehand.dao.OsDAO"%>
 <%@page import="br.telehand.model.TbOs"%>
 <%@page import="br.telehand.dao.CategoriaDAO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -86,7 +86,7 @@
 								
 								<% if( CNPJ != null && CNPJ != "" && CNPJ != "0" && !CNPJ.isEmpty() ){ %>
 								<div class="controle-cnpj">
-									<label for="razao" class="col-sm-2 control-label">Raz„o Social</label>
+									<label for="razao" class="col-sm-2 control-label">Raz√£o Social</label>
 									<div class="col-sm-10">
 										<input type="text" class="form-control" name="razao" id="razao" class="" disabled value="<%= cliente.getNmCliente().toString() %>">
 									</div>
@@ -97,12 +97,12 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="descricao" class="col-sm-2 control-label">DescriÁ„o</label>
+							<label for="descricao" class="col-sm-2 control-label">Descri√ß√£o</label>
 							<textarea class="col-xs-8" rows="3" name="descricao" id="descricao"><%= descricao %></textarea>
 						</div>
 						
 							<div class="form-group">
-								<label for="slcAtendimento" class="col-sm-2 control-label">Selecione um novo hor·rio para atendimento</label>
+								<label for="slcAtendimento" class="col-sm-2 control-label">Selecione um novo hor√°rio para atendimento</label>
 								<div class="col-sm-6">
 									<%= slcAtendimento %>
 								</div>
