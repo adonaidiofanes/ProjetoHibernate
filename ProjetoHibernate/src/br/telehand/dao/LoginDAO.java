@@ -5,7 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
 import br.telehand.model.TbLogin;
-import br.telehand.util.Util;
+import br.telehand.util.SessionFactorySingleton;
 
 public class LoginDAO {
 
@@ -13,7 +13,7 @@ public class LoginDAO {
 		
 		try {
 			
-			Session session = Util.getSessionFactory().openSession();
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
 			
 			Criteria cr = session.createCriteria(TbLogin.class);
 					 cr.add(Restrictions.eq("id.nrMatricula", matricula));

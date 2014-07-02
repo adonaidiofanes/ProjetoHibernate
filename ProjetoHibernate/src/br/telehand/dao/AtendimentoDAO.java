@@ -13,9 +13,7 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
 import br.telehand.model.TbAtendimento;
-import br.telehand.model.TbOs;
-import br.telehand.model.TbReporte;
-import br.telehand.util.Util;
+import br.telehand.util.SessionFactorySingleton;
 /**
  * Home object for domain model class TbAtendimento.
  * @see controller.TbAtendimento
@@ -29,7 +27,7 @@ public class AtendimentoDAO {
 		log.debug("getting TbAtendimento instance with id: " + id);
 		try {
 			
-			Session session = Util.getSessionFactory().openSession();
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
 			
 	        org.hibernate.Criteria criteria = session.createCriteria(TbAtendimento.class);
 	        
@@ -51,7 +49,7 @@ public class AtendimentoDAO {
 
 		List<TbAtendimento> list = null;
 		
-		Session session = Util.getSessionFactory().openSession();
+		Session session = SessionFactorySingleton.getSessionFactory().openSession();
 		
 		try {
 			session.beginTransaction();
@@ -75,7 +73,7 @@ public class AtendimentoDAO {
 	public List<TbAtendimento> listarTodos() {
 		
 		List<TbAtendimento> list = null;
-		Session session = Util.getSessionFactory().openSession();
+		Session session = SessionFactorySingleton.getSessionFactory().openSession();
 		
 		try {
 			session.beginTransaction();
@@ -96,7 +94,7 @@ public class AtendimentoDAO {
 		log.debug("getting TbAtendimento instance with id: " + id);
 		try {
 
-			Session session = Util.getSessionFactory().openSession();
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
 			Criteria cr = session.createCriteria(TbAtendimento.class);
 			TbAtendimento retorno = (TbAtendimento) cr.add( Restrictions.eq("tbAgenda.idJanela", id) ).uniqueResult();
 			
@@ -116,7 +114,7 @@ public class AtendimentoDAO {
 		log.debug("getting TbAtendimento instance with id: " + id);
 		try {
 
-			Session session = Util.getSessionFactory().openSession();
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
 			Criteria cr = session.createCriteria(TbAtendimento.class);
 			TbAtendimento retorno = (TbAtendimento) cr.add( Restrictions.eq("tbOs.idOs", id) ).uniqueResult();
 			
@@ -133,7 +131,7 @@ public class AtendimentoDAO {
 	}
 	
     public String atualizar(TbAtendimento objAtendimento) {
-        Session session = Util.getSessionFactory().openSession();
+        Session session = SessionFactorySingleton.getSessionFactory().openSession();
         String retorno = null;
         try {
             session.beginTransaction();
@@ -158,7 +156,7 @@ public class AtendimentoDAO {
 		String retorno = "";
 		
 		// Inicia a sesssao
-		Session session = Util.getSessionFactory().openSession();
+		Session session = SessionFactorySingleton.getSessionFactory().openSession();
 		
 		try {
 			session.beginTransaction();
@@ -199,7 +197,7 @@ public class AtendimentoDAO {
 		String retorno = "";
 		
 		// Inicia a sesssao
-		Session session = Util.getSessionFactory().openSession();
+		Session session = SessionFactorySingleton.getSessionFactory().openSession();
 		
 		try {
 			session.beginTransaction();

@@ -8,7 +8,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 import br.telehand.model.VwAgendaSemAgendamento;
-import br.telehand.util.Util;
+import br.telehand.util.SessionFactorySingleton;
 
 public class VwAgendaSemAgendamentoDAO {
 	
@@ -17,7 +17,7 @@ public class VwAgendaSemAgendamentoDAO {
 	public List<VwAgendaSemAgendamento> listarPorIdServico(int IdServico) {
 
 		List<VwAgendaSemAgendamento> list = null;
-		Session session = Util.getSessionFactory().openSession();
+		Session session = SessionFactorySingleton.getSessionFactory().openSession();
 		
 		try {
 			session.beginTransaction();

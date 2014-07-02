@@ -6,8 +6,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
+
 import br.telehand.model.TbUsuario;
-import br.telehand.util.Util;
+import br.telehand.util.SessionFactorySingleton;
 
 /**
  * Home object for domain model class TbUsuario.
@@ -21,7 +22,7 @@ public class TbUsuarioHome {
 	public TbUsuario findById(int id) {
 		log.debug("getting TbUsuario instance with id: " + id);
 		try {
-			Session session = Util.getSessionFactory().openSession();
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
 	        org.hibernate.Criteria criteria = session.createCriteria(TbUsuario.class);
 	        TbUsuario retorno = (TbUsuario) criteria.add(Restrictions.eq("nrMatricula", id)).uniqueResult();
 			if (retorno == null) {
@@ -37,7 +38,7 @@ public class TbUsuarioHome {
 	}
 	
 	public String delete(TbUsuario persistentInstance) {
-        Session session = Util.getSessionFactory().openSession();
+        Session session = SessionFactorySingleton.getSessionFactory().openSession();
         String retorno = null;
         try {
             TbUsuario auxiliar = persistentInstance;

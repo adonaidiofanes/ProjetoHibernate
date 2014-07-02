@@ -12,10 +12,8 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
-import br.telehand.model.TbAtendimento;
 import br.telehand.model.TbOs;
-import br.telehand.model.TbServico;
-import br.telehand.util.Util;
+import br.telehand.util.SessionFactorySingleton;
 /**
  * Home object for domain model class TbOs.
  * @see controller.TbOs
@@ -29,7 +27,7 @@ public class OsDAO {
 		log.debug("getting TbOs instance with id: " + id);
 		try {
 			
-			Session session = Util.getSessionFactory().openSession();
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
 			
 	        org.hibernate.Criteria criteria = session.createCriteria(TbOs.class);
 	        
@@ -50,7 +48,7 @@ public class OsDAO {
 	public List<TbOs> listarTodos() {
 		List<TbOs> list = null;
 		
-		Session session = Util.getSessionFactory().openSession();
+		Session session = SessionFactorySingleton.getSessionFactory().openSession();
 		
 		try {
 			session.beginTransaction();
@@ -72,7 +70,7 @@ public class OsDAO {
 	public List<TbOs> listarPorMatricula(int matricula) {
 		List<TbOs> list = null;
 		
-		Session session = Util.getSessionFactory().openSession();
+		Session session = SessionFactorySingleton.getSessionFactory().openSession();
 		
 		try {
 			session.beginTransaction();
@@ -95,7 +93,7 @@ public class OsDAO {
 	
 	public TbOs selecionar(int id) {
 		
-		Session session = Util.getSessionFactory().openSession();
+		Session session = SessionFactorySingleton.getSessionFactory().openSession();
 		
 		try {
 
@@ -112,7 +110,7 @@ public class OsDAO {
 	
     public String atualizar(TbOs os) {
     	System.out.println("Entrei no atualizar");
-        Session session = Util.getSessionFactory().openSession();
+        Session session = SessionFactorySingleton.getSessionFactory().openSession();
         String retorno = null;
         try {
             session.beginTransaction();

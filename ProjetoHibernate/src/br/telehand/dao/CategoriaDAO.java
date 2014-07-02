@@ -10,8 +10,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 import br.telehand.model.TbCategoria;
-import br.telehand.model.TbServico;
-import br.telehand.util.Util;
+import br.telehand.util.SessionFactorySingleton;
 /**
  * Home object for domain model class TbCategoria.
  * @see controller.TbCategoria
@@ -24,7 +23,7 @@ public class CategoriaDAO {
 	public List<TbCategoria> listarTodos() {
 		
 		List<TbCategoria> list = null;
-		Session session = Util.getSessionFactory().openSession();
+		Session session = SessionFactorySingleton.getSessionFactory().openSession();
 		
 		try {
 			session.beginTransaction();

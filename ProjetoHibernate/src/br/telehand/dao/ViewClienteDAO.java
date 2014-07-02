@@ -6,7 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
 import br.telehand.model.ViewClientes;
-import br.telehand.util.Util;
+import br.telehand.util.SessionFactorySingleton;
 
 public class ViewClienteDAO {
 	
@@ -24,7 +24,7 @@ public class ViewClienteDAO {
 				
 		try {
 			
-			Session session = Util.getSessionFactory().openSession();
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
 			
 	        org.hibernate.Criteria criteria = session.createCriteria(ViewClientes.class);
 	        
@@ -56,7 +56,7 @@ public class ViewClienteDAO {
 		
 		try {
 			
-			Session session = Util.getSessionFactory().openSession();
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
 			
 	        org.hibernate.Criteria criteria = session.createCriteria(ViewClientes.class);
 	        

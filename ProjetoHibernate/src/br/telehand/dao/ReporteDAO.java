@@ -10,7 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
 import br.telehand.model.TbReporte;
-import br.telehand.util.Util;
+import br.telehand.util.SessionFactorySingleton;
 /**
  * Home object for domain model class TbReporte.
  * @see controller.TbReporte
@@ -24,7 +24,7 @@ public class ReporteDAO {
 
 		List<TbReporte> list = null;
 		
-		Session session = Util.getSessionFactory().openSession();
+		Session session = SessionFactorySingleton.getSessionFactory().openSession();
 		
 		try {
 			session.beginTransaction();

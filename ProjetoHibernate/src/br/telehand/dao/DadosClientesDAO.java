@@ -16,7 +16,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Example;
 
 import br.telehand.model.TbDadosClientes;
-import br.telehand.util.Util;
+import br.telehand.util.SessionFactorySingleton;
 /**
  * Home object for domain model class TbDadosClientes.
  * @see controller.TbDadosClientes
@@ -43,7 +43,7 @@ public class DadosClientesDAO {
     	
     	List<TbDadosClientes> list = null;
 	    	
-        Session session = Util.getSessionFactory().openSession();
+        Session session = SessionFactorySingleton.getSessionFactory().openSession();
 		try {
 			session.beginTransaction();
 		    Criteria select = session.createCriteria(TbDadosClientes.class);  
