@@ -86,7 +86,7 @@ public class ServicoServlet extends HttpServlet {
 				view.forward(request, response);
 				
 			} else {
-				System.out.println("Erro ao selecionar o servi�o a ser apagado!");
+				System.out.println("Erro ao selecionar o serviço a ser apagado!");
 			}
 			
 		} // FIM APAGAR SERVICO
@@ -173,7 +173,7 @@ public class ServicoServlet extends HttpServlet {
 				msg = DAO.atualizar(servico);
 				
 			} else {
-				msg = "Erro ao selecionar o servi�o a ser atualizado!";
+				msg = "Erro ao selecionar o serviço a ser atualizado!";
 			}
 			
 			request.setAttribute("msgStatus", msg);

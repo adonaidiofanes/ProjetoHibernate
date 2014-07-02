@@ -47,7 +47,7 @@ public class TbUsuarioHome {
             session.getTransaction().commit();
             retorno = "Apagado com sucesso!";
         } catch (Exception e) {
-            retorno = "Ocorreu um erro ao apagar o serviço!";
+            retorno = "Ocorreu um erro ao apagar o serviÃ§o!";
             session.getTransaction().rollback();
         } finally {
             session.close();

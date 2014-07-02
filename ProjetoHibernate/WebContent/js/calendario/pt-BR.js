@@ -3,10 +3,10 @@ if(!window.calendar_languages) {
 }
 window.calendar_languages['pt-BR'] = {
 	error_noview:     'Calendar: View {0} not found',
-	error_dateformat: 'Calendar: Formato de data inv·lido {0}. Deve ser "now" ou "yyyy-mm-dd"',
-	error_loadurl:    'Calendar: URL de carregamento de eventos n„o est· atribuida',
-	error_where:      'Calendar: DireÁ„o de navegaÁ„o errada {0}. SÛ pode ser "next", "prev" ou "today"',
-	error_timedevide: 'Calend·rio: par‚metro para o separador de hora deve dividir 60 por um n˙mero inteiro. Por exemplo, 10, 15, 30',
+	error_dateformat: 'Calendar: Formato de data inv√°lido {0}. Deve ser "now" ou "yyyy-mm-dd"',
+	error_loadurl:    'Calendar: URL de carregamento de eventos n√£o est√° atribuida',
+	error_where:      'Calendar: Dire√ß√£o de navega√ß√£o errada {0}. S√≥ pode ser "next", "prev" ou "today"',
+	error_timedevide: 'Calend√°rio: par√¢metro para o separador de hora deve dividir 60 por um n√∫mero inteiro. Por exemplo, 10, 15, 30',
 
 	title_year:  '{0}',
 	title_month: '{0} de {1}',
@@ -18,11 +18,11 @@ window.calendar_languages['pt-BR'] = {
 	time:        'Tempo',
 	events:      'Desenvolvimentos',
 	before_time: 'Tempo antes da fita final',
-	after_time:  'End depois de uma fita tempor·ria',
+	after_time:  'End depois de uma fita tempor√°ria',
 
 	m0:  'Janeiro',
 	m1:  'Fevereiro',
-	m2:  'MarÁo',
+	m2:  'Mar√ßo',
 	m3:  'Abril',
 	m4:  'Maio',
 	m5:  'Junho',
@@ -48,11 +48,11 @@ window.calendar_languages['pt-BR'] = {
 
 	d0: 'Domingo',
 	d1: 'Segunda',
-	d2: 'TerÁa',
+	d2: 'Ter√ßa',
 	d3: 'Quarta',
 	d4: 'Quinta',
 	d5: 'Sexta',
-	d6: 'S·bado',
+	d6: 'S√°bado',
 
 	easter:       'Easter',
 	easterMonday: 'Easter Monday',
@@ -63,10 +63,10 @@ window.calendar_languages['pt-BR'] = {
 		'01-01': "Ano Novo",
 		'21-04': "Dia de Tiradentes",
 		'01-05': "Dia do Trabalhador",
-		'07-09': "Dia da IndependÍncia",
+		'07-09': "Dia da Independ√™ncia",
 		'12-10': "Nossa Senhora Aparecida",
 		'02-11': "Dia de Finados",
-		'15-11': "ProclamaÁ„o da Rep˙blica",
+		'15-11': "Proclama√ß√£o da Rep√∫blica",
 		'25-12': "Natal"
 	}
 };

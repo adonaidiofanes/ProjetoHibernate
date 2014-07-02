@@ -231,10 +231,10 @@ public class AgendaServlet extends HttpServlet {
 				String controle = "CancelarAtendimento";
 				
 				/*
-				A – Aberto
-				C – Cancelado
-				P – Pendente
-				R – Reagendado
+				A - Aberto
+				C - Cancelado
+				P - Pendente
+				R - Reagendado
 				E - Efetuado*/
 				
 				if(CdStatus.equals("P")){
@@ -244,7 +244,7 @@ public class AgendaServlet extends HttpServlet {
 					controle = "ReagendarAtendimento";
 					
 				} else if(CdStatus.equals("A")){
-					Status = "Atendimento Indisponível";
+					Status = "Atendimento IndisponÃ­vel";
 					objJSON.put("class", "event-important"); // bolinha vermelha
 					
 				} else if(CdStatus.equals("E")){
@@ -353,7 +353,7 @@ public class AgendaServlet extends HttpServlet {
 				objJSON.put("end", lDateF);
 				
 				// Montar Titulo
-				objJSON.put("title", "Atendimento Disponível - " + hInicial + " - " + hFinal);
+				objJSON.put("title", "Atendimento DisponÃ­vel - " + hInicial + " - " + hFinal);
 				objJSON.put("url", "http://localhost:8080/ProjetoHibernate/AgendaServlet.do?hInicial=" + 
 				hInicial + "&hFinal=" + hFinal + "&dia=" + ano_mes_dia + "&idServico="+ IdServico + "&idEquipe=" + IdEquipe + 
 				"&usuarioLogado=" + matriculaUsuario + "&idJanela=" + IdJanela + "&dt_agendamento=" + dataFormatadaInicial + "&matriculaTecnico=" + matriculaTecnico + "&Controle=CadastrarAtendimento");

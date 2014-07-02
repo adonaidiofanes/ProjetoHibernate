@@ -80,7 +80,7 @@ public class AtendimentoServlet extends HttpServlet {
 			if( resultadoProc.equals("sucesso") ){
 				resultadoProc = "<div class='alert alert-success'>Agendamento cadastrado com sucesso!</div>";
 			} else if( resultadoProc.equals("erro") ){
-				resultadoProc = "<div class='alert alert-danger'>Não foi possível cadastrar o agendamento!</div>";
+				resultadoProc = "<div class='alert alert-danger'>NÃ£o foi possÃ­vel cadastrar o agendamento!</div>";
 			} else {
 				resultadoProc = "";
 			}
@@ -113,7 +113,7 @@ public class AtendimentoServlet extends HttpServlet {
 				if( resultadoProc.equals("sucesso") ){
 					resultadoProc = "<div class='alert alert-success'>Atendimento cancelado com sucesso!</div>";
 				} else if( resultadoProc.equals("erro") ){
-					resultadoProc = "<div class='alert alert-danger'>Não foi possível cancelar o atendimento!</div>";
+					resultadoProc = "<div class='alert alert-danger'>NÃ£o foi possÃ­vel cancelar o atendimento!</div>";
 				} else {
 					resultadoProc = "";
 				}
@@ -190,7 +190,7 @@ public class AtendimentoServlet extends HttpServlet {
 				if( resultadoProcIns.equals("sucesso") ){
 					resultadoProcIns = "<div class='alert alert-success'>Reagendamento efetuado com sucesso!</div>";
 				} else if( resultadoProcIns.equals("erro") ){
-					resultadoProcIns = "<div class='alert alert-danger'>Nï¿½o foi possï¿½vel efetuar o agendamento!</div>";
+					resultadoProcIns = "<div class='alert alert-danger'>NÃ£o foi possÃ­vel efetuar o agendamento!</div>";
 				} else {
 					resultadoProcIns = "";
 				}
@@ -215,7 +215,7 @@ public class AtendimentoServlet extends HttpServlet {
 	
 			Integer servicoSelecionado = Integer.parseInt(request.getParameter("slcServico"));
 	
-			// Recebe todo conteï¿½do para transformar em JSON
+			// Recebe todo conteudo para transformar em JSON
 			JSONArray jArr = new JSONArray();
 	
 			// Buscar Agendamento que contenha Obj Servico
@@ -300,7 +300,7 @@ public class AtendimentoServlet extends HttpServlet {
 
 			Integer servicoSelecionado = Integer.parseInt(request.getParameter("slcServico"));
 
-			// Recebe todo conteï¿½do para transformar em JSON
+			// Recebe todo conteudo para transformar em JSON
 			JSONArray jArr = new JSONArray();
 
 			// Buscar Agendamento que contenha Obj Servico

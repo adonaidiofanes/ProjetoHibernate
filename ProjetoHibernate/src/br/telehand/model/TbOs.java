@@ -186,7 +186,7 @@ public class TbOs implements java.io.Serializable {
 		nome.add("Criada");
 		nome.add("Cancelada");
 		nome.add("Finalizada");
-		nome.add("Finalização Solicitada");
+		nome.add("FinalizaÃ§Ã£o Solicitada");
 		
     	for(int i = 0; i<lista.size(); i++){
     		

@@ -176,8 +176,8 @@ $(document).ready(function() {
 //	            success: function(result){
 //            		if( $("#modalRetorno") ){ $("#modalRetorno").remove(); }
 //            		
-//            		if( result == "OK" ){ $tplModal = $tplModalSmall.replace("@mensagem", "Serviï¿½o cadastrado com sucesso!"); }
-//            		else { $tplModal = $tplModalSmall.replace("@mensagem", "Erro ao cadastrar serviï¿½o!"); }
+//            		if( result == "OK" ){ $tplModal = $tplModalSmall.replace("@mensagem", "ServiÃ§o cadastrado com sucesso!"); }
+//            		else { $tplModal = $tplModalSmall.replace("@mensagem", "Erro ao cadastrar serviÃ§o!"); }
 //
 //            		$("body").append($tplModal);
 //            		$('#modalRetorno').modal('show');
@@ -262,7 +262,7 @@ $(document).ready(function() {
             		if( $("#modalRetorno") ){
             			$("#modalRetorno").remove();
             		}
-            		$tplModal = $tplModalSmall.replace("@mensagem", "Cliente não encontrado!");
+            		$tplModal = $tplModalSmall.replace("@mensagem", "Cliente nÃ£o encontrado!");
             		$("body").append($tplModal);
             		$('#modalRetorno').modal('show');
             		$("#idcliente").val("");
@@ -307,7 +307,7 @@ $(document).ready(function() {
 		    	senha: {required: true, minlength: 3}
 	    	},
 	    	messages: {
-	    		matricula: "Por favor preencha o campo matrï¿½cula",
+	    		matricula: "Por favor preencha o campo matrÃ­cula",
 	    		senha: "Por favor preencha o campo senha"
 	    	}
 	    });
@@ -324,10 +324,10 @@ $(document).ready(function() {
 	    		qt_fim: {required: true}
 	    	},
 	    	messages: {
-	    		nm_servico: "Por favor preencha o campo Nome do Serviço",
-	    		dt_vigencia: "Por favor preencha o campo Data de Vigência",
+	    		nm_servico: "Por favor preencha o campo Nome do ServiÃ§o",
+	    		dt_vigencia: "Por favor preencha o campo Data de VigÃªncia",
 	    		qtd_emp: "Por favor preencha o campo Quantidade de Empregados",
-	    		qt_inicio: "Por favor preencha o campo Retorno Início Atendimento",
+	    		qt_inicio: "Por favor preencha o campo Retorno InÃ­cio Atendimento",
 	    		qt_fim: "Por favor preencha o campo Retorno Fim Atendimento"
 	    	}
 	    });

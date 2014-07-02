@@ -73,11 +73,11 @@ public class ServicoDAO {
             sessao.flush();
             sessao.getTransaction().commit();
 //            retorno = "OK";
-            retorno = "Serviï¿½o cadastrado com sucesso!";
+            retorno = "ServiÃ§o cadastrado com sucesso!";
         } catch (Exception ex) {
             sessao.getTransaction().rollback();
 //            retorno = "ERRO";
-            retorno = "Erro ao cadastrar serviï¿½o!";
+            retorno = "Erro ao cadastrar serviÃ§o!";
         } finally {
             sessao.close();
         }
@@ -113,7 +113,7 @@ public class ServicoDAO {
             TbServico auxiliar = (TbServico) session.get(TbServico.class, servico.getIdServico());
             session.delete(auxiliar);
             session.getTransaction().commit();
-            retorno = "Serviço apagado com sucesso!";
+            retorno = "ServiÃ§o apagado com sucesso!";
         } catch (Exception e) {
             retorno = "Ocorreu um erro ao apagar o serviÃ§o!";
             session.getTransaction().rollback();
@@ -121,7 +121,7 @@ public class ServicoDAO {
             
             // Verificar se o servico ja esta sendo utilizado
             if(retorno.contains("foreign key constraint fails")){
-            	retorno = "Você não pode apagar um serviço que já está sendo utilizado!";
+            	retorno = "VocÃª nÃ£o pode apagar um serviÃ§o que jÃ¡ estÃ¡ sendo utilizado!";
             }
             
         } finally {

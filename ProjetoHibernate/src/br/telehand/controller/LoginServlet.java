@@ -96,7 +96,7 @@ public class LoginServlet extends HttpServlet {
 				// Destroi a sessao caso exista
 				session.invalidate();
 				
-				request.setAttribute("msg", "Usu·rio e/ou senhas inv·lidos!" );
+				request.setAttribute("msg", "Usu√°rio e/ou senhas inv√°lidos!" );
 				RequestDispatcher view = request.getRequestDispatcher("index.jsp");
 				view.forward(request, response);
 				

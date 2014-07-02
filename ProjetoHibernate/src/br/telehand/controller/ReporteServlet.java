@@ -55,7 +55,7 @@ public class ReporteServlet extends HttpServlet {
 			
 			Integer servicoSelecionado = Integer.parseInt(request.getParameter("slcServico"));
 
-			// Recebe todo conteúdo para transformar em JSON
+			// Recebe todo conteudo para transformar em JSON
 			JSONArray jArr = new JSONArray();
 
 			// Buscar Reporte que contenha Obj Servico
@@ -107,7 +107,7 @@ public class ReporteServlet extends HttpServlet {
 				if( cliente.getNrCelular() != null ){
 					jObjC.put("Celular", cliente.getNrCelular().toString());
 				} else {
-					jObjC.put("Celular", "Não cadastrado");
+					jObjC.put("Celular", "NÃ£o cadastrado");
 				}
 				
 				JSONObject jObjC2 = new JSONObject();

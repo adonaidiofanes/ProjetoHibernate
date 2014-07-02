@@ -54,7 +54,7 @@ function carregarPontos(pontos) {
 			
 			var marker = new google.maps.Marker({
 				position: new google.maps.LatLng(Agendamento.Latitude, Agendamento.Longitude),
-//				title: "OS: " + Id + " Endere�o: " + Endereco,
+//				title: "OS: " + Id + " Endereço: " + Endereco,
 				title: "Ponto",
 				icon: Marcador
 			});
@@ -78,10 +78,10 @@ function carregarPontos(pontos) {
 		var EnderecoCompleto = Cliente.Endereco + NumeroEndereco + Complemento + Cliente.Cidade + ", " + Cliente.UF;
 			EnderecoCompleto += CEP;
 			
-		var tplConteudo = "<p><strong>OS: #" + Agendamento.IdOS + "</strong> - �ltimo Contato: " + Agendamento.DtReporte +"</p>";
+		var tplConteudo = "<p><strong>OS: #" + Agendamento.IdOS + "</strong> - último Contato: " + Agendamento.DtReporte +"</p>";
 			tplConteudo += "<p><strong>Status:</strong> "+ Agendamento.CdStatus +"</p>";
 			tplConteudo += "<p><strong>Cliente:</strong> "+ Cliente.NmCliente +"</p>";
-			tplConteudo += "<p><strong>Endere�o:</strong> "+ EnderecoCompleto +"</p>";
+			tplConteudo += "<p><strong>Endereço:</strong> "+ EnderecoCompleto +"</p>";
 			tplConteudo += "<p><strong>Telefone / Celular:</strong> "+ Cliente.Telefone + " / " + Cliente.Celular +"</p>";
 			tplConteudo += "<p><strong>Email:</strong> "+ Cliente.Email +"</p>";
 			tplConteudo += "<p><strong>Equipe:</strong> PegarDadosdaEquipe / <strong>Smartphone: </strong> Agendamento.Smartphone </p>";
@@ -172,7 +172,7 @@ function porEndereco(pontos) {
 		var tplConteudo = "<p><strong>OS: #" + IdOS + "</strong> - " + DtAgendamento +"</p>";
 			tplConteudo += "<p><strong>Status:</strong> "+ CdStatus +"</p>";
 			tplConteudo += "<p><strong>Cliente:</strong> "+ NomeCliente +"</p>";
-			tplConteudo += "<p><strong>Endere�o:</strong> "+ EnderecoCompleto +"</p>";
+			tplConteudo += "<p><strong>Endereço:</strong> "+ EnderecoCompleto +"</p>";
 			tplConteudo += "<p><strong>Telefone / Celular:</strong> "+ Telefone + " / " + Celular +"</p>";
 			tplConteudo += "<p><strong>Email:</strong> "+ EmailCliente +"</p>";
 			tplConteudo += "<p><strong>Equipe:</strong> "+ IdEquipe + " / <strong>Smartphone: </strong>" + Agendamento.Smartphone + "</p>";
@@ -207,7 +207,7 @@ function gerarPontoEndereco(Endereco, Id, Conteudo) {
 			var marker = new google.maps.Marker({
 				map : map,
 				position : results[0].geometry.location,
-				title: "OS: " + Id + " Endere�o: " + Endereco,
+				title: "OS: " + Id + " Endereço: " + Endereco,
 				icon : MarcadorIcone
 			});
 
@@ -234,7 +234,7 @@ function gerarPontoEndereco(Endereco, Id, Conteudo) {
 			}, 2000);
 			console.log("LIMIT: " + Id);
 		} else {
-			alert('Nao foi poss�vel localizar o endere�o: '
+			alert('Nao foi possível localizar o endereço: '
 					+ status);
 		}
 		
