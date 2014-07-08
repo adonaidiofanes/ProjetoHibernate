@@ -22,6 +22,7 @@ public class Util {
 //    }
     
     /*
+     * Retorna data formatada
      * data: tipo date / formato: ex: "dd/MM/yyyy HH:mm:ss"
      * */
     public static String DateParaString(Date data, String formato) {
