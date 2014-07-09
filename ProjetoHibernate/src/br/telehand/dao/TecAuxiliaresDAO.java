@@ -3,14 +3,16 @@ package br.telehand.dao;
 // Generated 27/03/2014 15:10:19 by Hibernate Tools 4.0.0
 
 import java.util.List;
-import javax.naming.InitialContext;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
-import org.hibernate.SessionFactory;
+import org.hibernate.Session;
 import org.hibernate.criterion.Example;
+
 import br.telehand.model.TbTecAuxiliares;
 import br.telehand.model.TbTecAuxiliaresId;
+import br.telehand.util.SessionFactorySingleton;
 /**
  * Home object for domain model class TbTecAuxiliares.
  * @see controller.TbTecAuxiliares
@@ -20,23 +22,11 @@ public class TecAuxiliaresDAO {
 
 	private static final Log log = LogFactory.getLog(TecAuxiliaresDAO.class);
 
-	private final SessionFactory sessionFactory = getSessionFactory();
-
-	protected SessionFactory getSessionFactory() {
-		try {
-			return (SessionFactory) new InitialContext()
-					.lookup("SessionFactory");
-		} catch (Exception e) {
-			log.error("Could not locate SessionFactory in JNDI", e);
-			throw new IllegalStateException(
-					"Could not locate SessionFactory in JNDI");
-		}
-	}
-
 	public void persist(TbTecAuxiliares transientInstance) {
 		log.debug("persisting TbTecAuxiliares instance");
 		try {
-			sessionFactory.getCurrentSession().persist(transientInstance);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			session.persist(transientInstance);
 			log.debug("persist successful");
 		} catch (RuntimeException re) {
 			log.error("persist failed", re);
@@ -47,7 +37,8 @@ public class TecAuxiliaresDAO {
 	public void attachDirty(TbTecAuxiliares instance) {
 		log.debug("attaching dirty TbTecAuxiliares instance");
 		try {
-			sessionFactory.getCurrentSession().saveOrUpdate(instance);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			session.saveOrUpdate(instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -58,7 +49,8 @@ public class TecAuxiliaresDAO {
 	public void attachClean(TbTecAuxiliares instance) {
 		log.debug("attaching clean TbTecAuxiliares instance");
 		try {
-			sessionFactory.getCurrentSession().lock(instance, LockMode.NONE);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			session.lock(instance, LockMode.NONE);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -69,7 +61,8 @@ public class TecAuxiliaresDAO {
 	public void delete(TbTecAuxiliares persistentInstance) {
 		log.debug("deleting TbTecAuxiliares instance");
 		try {
-			sessionFactory.getCurrentSession().delete(persistentInstance);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			session.delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
@@ -80,8 +73,8 @@ public class TecAuxiliaresDAO {
 	public TbTecAuxiliares merge(TbTecAuxiliares detachedInstance) {
 		log.debug("merging TbTecAuxiliares instance");
 		try {
-			TbTecAuxiliares result = (TbTecAuxiliares) sessionFactory
-					.getCurrentSession().merge(detachedInstance);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			TbTecAuxiliares result = (TbTecAuxiliares) session.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -93,8 +86,8 @@ public class TecAuxiliaresDAO {
 	public TbTecAuxiliares findById(TbTecAuxiliaresId id) {
 		log.debug("getting TbTecAuxiliares instance with id: " + id);
 		try {
-			TbTecAuxiliares instance = (TbTecAuxiliares) sessionFactory
-					.getCurrentSession().get("controller.TbTecAuxiliares", id);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			TbTecAuxiliares instance = (TbTecAuxiliares) session.get("controller.TbTecAuxiliares", id);
 			if (instance == null) {
 				log.debug("get successful, no instance found");
 			} else {
@@ -110,7 +103,8 @@ public class TecAuxiliaresDAO {
 	public List findByExample(TbTecAuxiliares instance) {
 		log.debug("finding TbTecAuxiliares instance by example");
 		try {
-			List results = sessionFactory.getCurrentSession()
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			List results = session
 					.createCriteria("controller.TbTecAuxiliares")
 					.add(Example.create(instance)).list();
 			log.debug("find by example successful, result size: "
