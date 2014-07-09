@@ -4,15 +4,12 @@ package br.telehand.dao;
 
 import java.util.List;
 
-import javax.naming.InitialContext;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.LockMode;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Example;
 
 import br.telehand.model.TbDadosClientes;
@@ -26,19 +23,6 @@ public class DadosClientesDAO {
 
 	private static final Log log = LogFactory.getLog(DadosClientesDAO.class);
 
-	private final SessionFactory sessionFactory = getSessionFactory();
-
-	protected SessionFactory getSessionFactory() {
-		try {
-			return (SessionFactory) new InitialContext()
-					.lookup("SessionFactory");
-		} catch (Exception e) {
-			log.error("Could not locate SessionFactory in JNDI", e);
-			throw new IllegalStateException(
-					"Could not locate SessionFactory in JNDI");
-		}
-	}
-	
     public List<TbDadosClientes> listarTodos() {
     	
     	List<TbDadosClientes> list = null;
@@ -64,7 +48,8 @@ public class DadosClientesDAO {
 	public void persist(TbDadosClientes transientInstance) {
 		log.debug("persisting TbDadosClientes instance");
 		try {
-			sessionFactory.getCurrentSession().persist(transientInstance);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			session.persist(transientInstance);
 			log.debug("persist successful");
 		} catch (RuntimeException re) {
 			log.error("persist failed", re);
@@ -75,7 +60,8 @@ public class DadosClientesDAO {
 	public void attachDirty(TbDadosClientes instance) {
 		log.debug("attaching dirty TbDadosClientes instance");
 		try {
-			sessionFactory.getCurrentSession().saveOrUpdate(instance);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			session.saveOrUpdate(instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -86,7 +72,8 @@ public class DadosClientesDAO {
 	public void attachClean(TbDadosClientes instance) {
 		log.debug("attaching clean TbDadosClientes instance");
 		try {
-			sessionFactory.getCurrentSession().lock(instance, LockMode.NONE);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			session.lock(instance, LockMode.NONE);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -97,7 +84,8 @@ public class DadosClientesDAO {
 	public void delete(TbDadosClientes persistentInstance) {
 		log.debug("deleting TbDadosClientes instance");
 		try {
-			sessionFactory.getCurrentSession().delete(persistentInstance);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			session.delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
@@ -108,8 +96,8 @@ public class DadosClientesDAO {
 	public TbDadosClientes merge(TbDadosClientes detachedInstance) {
 		log.debug("merging TbDadosClientes instance");
 		try {
-			TbDadosClientes result = (TbDadosClientes) sessionFactory
-					.getCurrentSession().merge(detachedInstance);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			TbDadosClientes result = (TbDadosClientes) session.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -121,8 +109,8 @@ public class DadosClientesDAO {
 	public TbDadosClientes findById(java.lang.Integer id) {
 		log.debug("getting TbDadosClientes instance with id: " + id);
 		try {
-			TbDadosClientes instance = (TbDadosClientes) sessionFactory
-					.getCurrentSession().get("controller.TbDadosClientes", id);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			TbDadosClientes instance = (TbDadosClientes) session.get("controller.TbDadosClientes", id);
 			if (instance == null) {
 				log.debug("get successful, no instance found");
 			} else {
@@ -138,7 +126,8 @@ public class DadosClientesDAO {
 	public List findByExample(TbDadosClientes instance) {
 		log.debug("finding TbDadosClientes instance by example");
 		try {
-			List results = sessionFactory.getCurrentSession()
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			List results = session
 					.createCriteria("controller.TbDadosClientes")
 					.add(Example.create(instance)).list();
 			log.debug("find by example successful, result size: "

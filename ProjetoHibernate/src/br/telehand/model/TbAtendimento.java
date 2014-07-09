@@ -1,11 +1,13 @@
 package br.telehand.model;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
@@ -32,8 +34,7 @@ public class TbAtendimento implements java.io.Serializable {
 	public TbAtendimento() {
 	}
 
-	public TbAtendimento(TbOs tbOs, TbAgenda tbAgenda, Date dtAgendamento,
-			int nrMatricula, char cdStatus) {
+	public TbAtendimento(TbOs tbOs, TbAgenda tbAgenda, Date dtAgendamento, int nrMatricula, char cdStatus) {
 		this.tbOs = tbOs;
 		this.tbAgenda = tbAgenda;
 		this.dtAgendamento = dtAgendamento;
@@ -41,8 +42,7 @@ public class TbAtendimento implements java.io.Serializable {
 		this.cdStatus = cdStatus;
 	}
 
-	public TbAtendimento(TbOs tbOs, TbCategoria tbCategoria, TbAgenda tbAgenda,
-			Date dtAgendamento, int nrMatricula, char cdStatus) {
+	public TbAtendimento(TbOs tbOs, TbCategoria tbCategoria, TbAgenda tbAgenda, Date dtAgendamento, int nrMatricula, char cdStatus) {
 		this.tbOs = tbOs;
 		this.tbCategoria = tbCategoria;
 		this.tbAgenda = tbAgenda;

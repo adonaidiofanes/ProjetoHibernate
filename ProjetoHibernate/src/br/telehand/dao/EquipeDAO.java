@@ -4,15 +4,14 @@ package br.telehand.dao;
 
 import java.util.List;
 
-import javax.naming.InitialContext;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
-import org.hibernate.SessionFactory;
+import org.hibernate.Session;
 import org.hibernate.criterion.Example;
 
 import br.telehand.model.TbEquipe;
+import br.telehand.util.SessionFactorySingleton;
 /**
  * Home object for domain model class TbEquipe.
  * @see controller.TbEquipe
@@ -22,23 +21,11 @@ public class EquipeDAO {
 
 	private static final Log log = LogFactory.getLog(EquipeDAO.class);
 
-	private final SessionFactory sessionFactory = getSessionFactory();
-
-	protected SessionFactory getSessionFactory() {
-		try {
-			return (SessionFactory) new InitialContext()
-					.lookup("SessionFactory");
-		} catch (Exception e) {
-			log.error("Could not locate SessionFactory in JNDI", e);
-			throw new IllegalStateException(
-					"Could not locate SessionFactory in JNDI");
-		}
-	}
-
 	public void persist(TbEquipe transientInstance) {
 		log.debug("persisting TbEquipe instance");
 		try {
-			sessionFactory.getCurrentSession().persist(transientInstance);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			session.persist(transientInstance);
 			log.debug("persist successful");
 		} catch (RuntimeException re) {
 			log.error("persist failed", re);
@@ -49,7 +36,8 @@ public class EquipeDAO {
 	public void attachDirty(TbEquipe instance) {
 		log.debug("attaching dirty TbEquipe instance");
 		try {
-			sessionFactory.getCurrentSession().saveOrUpdate(instance);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			session.saveOrUpdate(instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -60,7 +48,8 @@ public class EquipeDAO {
 	public void attachClean(TbEquipe instance) {
 		log.debug("attaching clean TbEquipe instance");
 		try {
-			sessionFactory.getCurrentSession().lock(instance, LockMode.NONE);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			session.lock(instance, LockMode.NONE);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -71,7 +60,8 @@ public class EquipeDAO {
 	public void delete(TbEquipe persistentInstance) {
 		log.debug("deleting TbEquipe instance");
 		try {
-			sessionFactory.getCurrentSession().delete(persistentInstance);
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			session.delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
@@ -82,7 +72,8 @@ public class EquipeDAO {
 	public TbEquipe merge(TbEquipe detachedInstance) {
 		log.debug("merging TbEquipe instance");
 		try {
-			TbEquipe result = (TbEquipe) sessionFactory.getCurrentSession()
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			TbEquipe result = (TbEquipe) session
 					.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
@@ -95,7 +86,8 @@ public class EquipeDAO {
 	public TbEquipe findById(java.lang.Integer id) {
 		log.debug("getting TbEquipe instance with id: " + id);
 		try {
-			TbEquipe instance = (TbEquipe) sessionFactory.getCurrentSession()
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			TbEquipe instance = (TbEquipe) session
 					.get("controller.TbEquipe", id);
 			if (instance == null) {
 				log.debug("get successful, no instance found");
@@ -112,7 +104,8 @@ public class EquipeDAO {
 	public List findByExample(TbEquipe instance) {
 		log.debug("finding TbEquipe instance by example");
 		try {
-			List results = sessionFactory.getCurrentSession()
+			Session session = SessionFactorySingleton.getSessionFactory().openSession();
+			List results = session
 					.createCriteria("controller.TbEquipe")
 					.add(Example.create(instance)).list();
 			log.debug("find by example successful, result size: "
