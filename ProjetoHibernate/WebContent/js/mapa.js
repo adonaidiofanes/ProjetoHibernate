@@ -40,17 +40,19 @@ function carregarPontos(pontos) {
 			var Agendamento = pontos[index][0].tbAgendamento;
 			
 			/* Verificar qual o tipo de marcardor de acordo com o tipo de serviço
-			   C – A caminho
-			   E – Em atendimento
-			   A – Atendimento Finalizado
-			   P – Atendimento Pendente
+				A – Aberto
+				C – Cancelado
+				P – Pendente
+				R – Reagendado
+				E - Efetuado			   
 			*/
 			var Marcador = pathProjeto + "img/marcador.png";
 			switch( Agendamento.Cdstatus ){
-				case "c" : Marcador = pathProjeto + "img/marcador_acaminho.png"; break;
-				case "e" : Marcador = pathProjeto + "img/marcador_ematendimento.png"; break;
-				case "a" : Marcador = pathProjeto + "img/marcador_finalizado.png"; break;
-				case "p" : Marcador = pathProjeto + "img/marcador_pendente.png"; break;
+				case "A" : Marcador = pathProjeto + "img/marcador_aberto.png"; break;
+				case "C" : Marcador = pathProjeto + "img/marcador_cancelado.png"; break;
+				case "P" : Marcador = pathProjeto + "img/marcador_pendente.png"; break;
+				case "R" : Marcador = pathProjeto + "img/marcador_reagendado.png"; break;
+				case "E" : Marcador = pathProjeto + "img/marcador_efetuado.png"; break;
 			}
 			
 			var marker = new google.maps.Marker({
