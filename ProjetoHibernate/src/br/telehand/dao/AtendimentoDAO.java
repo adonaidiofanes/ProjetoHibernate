@@ -2,6 +2,10 @@ package br.telehand.dao;
 
 // Generated 27/03/2014 15:10:19 by Hibernate Tools 4.0.0
 
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -45,7 +49,7 @@ public class AtendimentoDAO {
 		}
 	}
 	
-	public List<TbAtendimento> listarIdServico(int IdServico) {
+	public List<TbAtendimento> listarIdServico(int IdServico, String dtAgendamento) {
 
 		List<TbAtendimento> list = null;
 		
@@ -57,7 +61,21 @@ public class AtendimentoDAO {
 			Criteria cr = session.createCriteria(TbAtendimento.class, "a");
 					 cr.createAlias("a.tbOs.tbServico", "s")
 					 .add(Restrictions.eq("s.idServico",IdServico));
-//					 cr.setMaxResults(12);
+					 
+					    // Tratar datas						
+						if( !dtAgendamento.equals("") ){
+							
+							String[] explode = dtAgendamento.split("/");
+							String dtAgendamentoI = explode[2] + "-" + explode[1] + "-" + explode[0] + " 00:00:00";
+							String dtAgendamentoF = explode[2] + "-" + explode[1] + "-" + explode[0] + " 23:59:59";
+							
+							java.sql.Timestamp dataI = java.sql.Timestamp.valueOf(dtAgendamentoI);
+							java.sql.Timestamp dataF = java.sql.Timestamp.valueOf(dtAgendamentoF);
+							
+							cr.add(Restrictions.between("a.dtAgendamento", dataI, dataF));
+							
+						}
+					 
 					 list = cr.list();
 			
 			session.getTransaction().commit();

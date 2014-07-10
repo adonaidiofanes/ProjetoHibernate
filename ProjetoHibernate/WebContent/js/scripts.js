@@ -4,6 +4,7 @@ $(document).ready(function() {
 	 *  MASCARAS
 	 * ==================================================================== */
 	$(".dataHora").mask("99/99/9999 99:99:99");
+	$(".data").mask("99/99/9999");
 	
 	/* ====================================================================
 	 *  BUSCAR REPORTE : MAPA
@@ -50,10 +51,11 @@ $(document).ready(function() {
         
     	var Controle = $("#Controle").val();
     	var slcServico = $("#slcServico").val();
+    	var dt_agendamento = $("#dt_agendamento").val();
     	
     	$.ajax({
             type: "POST",
-            data: { Controle:Controle, slcServico:slcServico },
+            data: { Controle:Controle, slcServico:slcServico, dt_agendamento:dt_agendamento },
              
             url: "/ProjetoHibernate/AtendimentoServlet.do",
             dataType: "json",
