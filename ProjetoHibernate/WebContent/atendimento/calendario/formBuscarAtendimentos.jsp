@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
 		<%@page import="br.telehand.dao.ServicoDAO"%>
 		
 		<%
@@ -7,14 +10,14 @@
 		<div class="row-fluid">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3 class="panel-title">Calend·rio de Atendimentos</h3>
+					<h3 class="panel-title">Calend√°rio de Atendimentos</h3>
 				</div>
 				<div class="panel-body">
 					<form method="POST">
 						<fieldset>
 							<legend>Filtrar</legend>
 							<div class="col-sm-6">
-								<label>Tipo(s) de ServiÁo(s)</label>
+								<label>Tipo(s) de Servi√ßo(s)</label>
 								<%="<select name='slcServico' id='slcServico' class='form-control'>"
 									+ DAOServico.gerarOptions(0) + "</select>"%>
 							</div>

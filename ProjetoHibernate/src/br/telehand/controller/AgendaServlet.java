@@ -191,6 +191,10 @@ public class AgendaServlet extends HttpServlet {
 		/* ====================================================================
 		 *  RESGATAR AGENDA COM/SEM AGENDAMENTOS POR IdServico
 		 * ==================================================================== */
+
+		// Pegar URL do Projeto
+		String urlProjeto = request.getContextPath();
+		
 		if( (request.getParameter("Controle") != null) && (request.getParameter("Controle").equals("CalendarioAgendamento")) ){
 		
 		Integer IdServico = Integer.parseInt(request.getParameter("slcServico"));
@@ -289,7 +293,7 @@ public class AgendaServlet extends HttpServlet {
 					// Montar Titulo
 					objJSON.put("title", Status + " - " + hInicial + " - " + hFinal);
 					
-					objJSON.put("url", "http://localhost:8080/ProjetoHibernate/AgendaServlet.do?hInicial=" + 
+					objJSON.put("url", urlProjeto + "/AgendaServlet.do?hInicial=" + 
 					hInicial + "&hFinal=" + hFinal + "&dia=" + ano_mes_dia + "&idServico="+ IdServico + "&idEquipe=" + IdEquipe + 
 					"&usuarioLogado=" + matriculaUsuario + "&idJanela=" + IdJanela + "&dt_agendamento=" + dataFormatadaInicial + "&matriculaTecnico=" + matriculaTecnico +
 					"&idOs=" + IdOS + "&idAtendimento=" + IdAtendimento + "&Controle=" + controle);
@@ -354,7 +358,7 @@ public class AgendaServlet extends HttpServlet {
 				
 				// Montar Titulo
 				objJSON.put("title", "Atendimento Disponível - " + hInicial + " - " + hFinal);
-				objJSON.put("url", "http://localhost:8080/ProjetoHibernate/AgendaServlet.do?hInicial=" + 
+				objJSON.put("url", urlProjeto + "/AgendaServlet.do?hInicial=" + 
 				hInicial + "&hFinal=" + hFinal + "&dia=" + ano_mes_dia + "&idServico="+ IdServico + "&idEquipe=" + IdEquipe + 
 				"&usuarioLogado=" + matriculaUsuario + "&idJanela=" + IdJanela + "&dt_agendamento=" + dataFormatadaInicial + "&matriculaTecnico=" + matriculaTecnico + "&Controle=CadastrarAtendimento");
 				
