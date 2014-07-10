@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
 	<%
 		// Resgatar sessao do usuario
 		String nomeUsuario = (String) session.getAttribute("nomeUsuario");
@@ -9,7 +12,7 @@
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			<span class="sr-only">Alternar navegação</span>
+			<span class="sr-only">Alternar navegaÃ§Ã£o</span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -23,12 +26,12 @@
 		  
 		  	<!-- Parametros -->
 			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Parâmetros <b class="caret"></b></a>
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">ParÃ¢metros <b class="caret"></b></a>
 			  <ul class="dropdown-menu" role="menu">
 			  	<li><a href="#">Perfis</a></li>
-				<li><a href="/ProjetoHibernate/servico/">Serviços</a></li>
+				<li><a href="/ProjetoHibernate/servico/">ServiÃ§os</a></li>
 				<li><a href="#">Equipe</a></li>
-				<li><a href="#">Calendário</a></li>
+				<li><a href="#">CalendÃ¡rio</a></li>
 				<li><a href="#">Janela</a></li>
 				<li><a href="#">Agenda</a></li>
 				<li><a href="#">Categoria de problema</a></li>
@@ -39,14 +42,14 @@
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consultas <b class="caret"></b></a>
 			  <ul class="dropdown-menu" role="menu">
-				<li><a href="/ProjetoHibernate/atendimento/">Endereços de Atendimentos</a></li>
+				<li><a href="/ProjetoHibernate/atendimento/">EndereÃ§os de Atendimentos</a></li>
 				<li><a href="/ProjetoHibernate/reporte">Posicionamento das equipes</a></li>
 				<li><a href="#">Atendimentos por cliente</a></li>
 				<li><a href="#">LOG</a></li>
-				<li><a href="#">Tempo médio de atendimento</a></li>
-				<li><a href="#">Número de atendimentos</a></li>
-				<li><a href="#">Atendimentos por técnico</a></li>
-				<li><a href="#">Atendimentos de recuperação</a></li>
+				<li><a href="#">Tempo mÃ©dio de atendimento</a></li>
+				<li><a href="#">NÃºmero de atendimentos</a></li>
+				<li><a href="#">Atendimentos por tÃ©cnico</a></li>
+				<li><a href="#">Atendimentos de recuperaÃ§Ã£o</a></li>
 			  </ul>
 			</li>
 			
