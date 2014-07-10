@@ -1,7 +1,10 @@
 package br.telehand.controller;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -62,6 +65,8 @@ public class ReporteServlet extends HttpServlet {
 			ReporteDAO DAOReporte = new ReporteDAO();
 			List<TbReporte> reportes = DAOReporte.listarPorIdServico(servicoSelecionado);
 			
+			if(reportes != null){
+			
 			for (int i = 0; i < reportes.size(); i++) {
 				TbReporte reporte = (TbReporte) reportes.get(i);
 				
@@ -73,8 +78,8 @@ public class ReporteServlet extends HttpServlet {
 				jObj.put("CdStatus", String.valueOf(reporte.getId().getCdStatus()));
 				jObj.put("DtReporte", Util.DateParaString(reporte.getId().getDtReporte(), "dd/MM/yyyy HH:mm:ss"));
 				
-				System.out.println("halls");
-				System.out.println(reporte.getTbAtendimento().getTbOs().getTbServico().getIdServico());
+				jObj.put("IdEquipe", reporte.getTbAtendimento().getTbAgenda().getTbEquipe().getIdEquipe());
+				jObj.put("Smartphone", reporte.getTbAtendimento().getTbAgenda().getTbEquipe().getNrSmarthfone());
 				
 
 				JSONObject jObj2 = new JSONObject();
@@ -118,6 +123,7 @@ public class ReporteServlet extends HttpServlet {
 				lista.add(jObjC2);
 				jArr.put(lista);
 				
+			}
 			}
 			
 			  String resposta = jArr.toString();
