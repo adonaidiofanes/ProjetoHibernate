@@ -158,7 +158,8 @@ public class AtendimentoServlet extends HttpServlet {
 			
 			// PROCEDURE: PR_DEL_AGENDAMENTO
 			TbAtendimento atendimento = aDAO.findById(idAtendimento);
-			atendimento.setCdStatus('R');
+			//atendimento.setCdStatus('R');
+			atendimento.reagendarAtendimento();
 			String retornoStatusR = aDAO.atualizar(atendimento);
 	
 			request.setAttribute("retornoStatusR", retornoStatusR );

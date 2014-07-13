@@ -1,33 +1,56 @@
 package br.telehand.state;
 
+import br.telehand.model.TbAtendimento;
+import br.telehand.util.StateAtendimentoEnum;
+
 public class Pendente implements StateAtendimento {
 
-	public Pendente() {
-		// TODO Auto-generated constructor stub
+	private StateAtendimentoEnum state; 
+
+	private static Pendente instancia; // Instância do Singleton
+	
+	protected Pendente() {
+	}
+
+	public static Pendente instancia() {
+		if (instancia == null) {
+			instancia = new Pendente();
+			instancia.state = StateAtendimentoEnum.Pendente;
+		}
+		return instancia;
+	}
+	
+	@Override
+	public StateAtendimentoEnum getStateEnum() {
+		return state;
 	}
 
 	@Override
-	public void reagendarAtendimento() {
-		// TODO Auto-generated method stub
+	public void abrirAtendimento(TbAtendimento atendimento) {
+		throw new IllegalStateException("Mudança de estado de " + instancia.state + " para " + Aberto.instancia().getStateEnum() + " não permitida.");
 
 	}
 
 	@Override
-	public void concluirAtendimento() {
-		// TODO Auto-generated method stub
-
+	public void reagendarAtendimento(TbAtendimento atendimento) {
+		atendimento.estabelecerEstado(Reagendado.instancia());
+		System.out.println("Mudança de estado de " + instancia.state + " para " + atendimento.retornarEstado().getStateEnum() + " realizada.");
 	}
 
 	@Override
-	public void gerarPendencia() {
-		// TODO Auto-generated method stub
-
+	public void concluirAtendimento(TbAtendimento atendimento) {
+		throw new IllegalStateException("Mudança de estado de " + instancia.state + " para " + Efetuado.instancia().getStateEnum() + " não permitida.");
 	}
 
 	@Override
-	public void cancelarAtendimento() {
-		// TODO Auto-generated method stub
-
+	public void gerarPendencia(TbAtendimento atendimento) {
+		atendimento.estabelecerEstado(Pendente.instancia());
+		System.out.println("Mudança de estado de " + instancia.state + " para " + atendimento.retornarEstado().getStateEnum() + " realizada.");
 	}
+
+	@Override
+	public void cancelarAtendimento(TbAtendimento atendimento) {
+		atendimento.estabelecerEstado(Cancelado.instancia());
+		System.out.println("Mudança de estado de " + instancia.state + " para " + atendimento.retornarEstado().getStateEnum() + " realizada.");	}
 
 }

@@ -1,13 +1,21 @@
 package br.telehand.state;
 
+import br.telehand.model.TbAtendimento;
+import br.telehand.util.StateAtendimentoEnum;
+
+
 public interface StateAtendimento {
 	
-	public void reagendarAtendimento();
+	public StateAtendimentoEnum getStateEnum();  
 	
-	public void concluirAtendimento();
+	public void abrirAtendimento(TbAtendimento atendimento);
 	
-	public void gerarPendencia();
+	public void reagendarAtendimento(TbAtendimento atendimento);
 	
-	public void cancelarAtendimento();
+	public void concluirAtendimento(TbAtendimento atendimento);
+	
+	public void gerarPendencia(TbAtendimento atendimento);
+	
+	public void cancelarAtendimento(TbAtendimento atendimento);
 
 }
