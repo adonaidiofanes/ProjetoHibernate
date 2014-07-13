@@ -32,14 +32,14 @@
 				<fieldset>
 				<legend>Filtrar</legend>
 				
-				<!-- div class="col-sm-2">
-					<label>Data de Atendimento</label>
-					<input class="form-control" type="text" placeholder="Ex: dd/mm/yy">
-				</div -->
-				
 				<div class="col-sm-6">
 					<label>Tipo(s) de Serviço(s)</label>
-					<%= "<select name='slcServico' id='slcServico' class='form-control'>" +  DAOServico.gerarOptions(0) + "</select>" %>
+					<%= "<select name='slcServico' id='slcServico' class='form-control'><option value='0'>- Selecione -</option>" +  DAOServico.gerarOptions(0) + "</select>" %>
+				</div>
+				
+				<div class="col-sm-2">
+					<label for="dt_agendamento">Data de Atendimento</label>
+					<input class="form-control data" id="dt_agendamento" name="dt_agendamento" type="text" placeholder="Ex: dd/mm/yy">
 				</div>
 				
 				<div class="col-sm-3">

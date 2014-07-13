@@ -81,7 +81,7 @@
 							<div class="form-group">
 								<label for="qt_inicio" class="col-sm-4 control-label"><i
 									class="glyphicon glyphicon-time"></i> Retorno Início
-									Atendimento</label>
+									Atendimento <small>(em minutos)</small></label>
 								<div class="col-sm-8">
 									<input type="text" class="form-control" id="qt_inicio"
 										name="qt_inicio">
@@ -92,7 +92,7 @@
 
 							<div class="form-group">
 								<label for="qt_fim" class="col-sm-4 control-label"><i
-									class="glyphicon glyphicon-time"></i> Retorno Fim Atendimento</label>
+									class="glyphicon glyphicon-time"></i> Retorno Fim Atendimento <small>(em minutos)</small></label>
 								<div class="col-sm-8">
 									<input type="text" class="form-control" id="qt_fim"
 										name="qt_fim">

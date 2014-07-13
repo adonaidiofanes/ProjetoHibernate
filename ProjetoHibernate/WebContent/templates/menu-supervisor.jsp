@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
 	<%
 		// Resgatar sessao do usuario
 		String nomeUsuario = (String) session.getAttribute("nomeUsuario");
@@ -9,7 +12,7 @@
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			<span class="sr-only">Alternar navegação</span>
+			<span class="sr-only">Alternar navegaÃ§Ã£o</span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -25,7 +28,7 @@
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consultas <b class="caret"></b></a>
 			  <ul class="dropdown-menu" role="menu">
-				<li><a href="/ProjetoHibernate/atendimento/">Endereços de Atendimentos</a></li>
+				<li><a href="/ProjetoHibernate/atendimento/">EndereÃ§os de Atendimentos</a></li>
 				<li><a href="/ProjetoHibernate/reporte">Posicionamento das equipes</a></li>
 				<li><a href="#">Atendimentos por cliente</a></li>
 			  </ul>

@@ -2,6 +2,7 @@ var map;
 var idInfoBoxAberto;
 var infoBox = [];
 var markers = [];
+var pathProjeto = "/ProjetoHibernate/";
 
 function initialize() {	
 	var latlng = new google.maps.LatLng(-18.8800397, -47.05878999999999);
@@ -39,17 +40,19 @@ function carregarPontos(pontos) {
 			var Agendamento = pontos[index][0].tbAgendamento;
 			
 			/* Verificar qual o tipo de marcardor de acordo com o tipo de serviço
-			   C – A caminho
-			   E – Em atendimento
-			   A – Atendimento Finalizado
-			   P – Atendimento Pendente
+				A – Aberto
+				C – Cancelado
+				P – Pendente
+				R – Reagendado
+				E - Efetuado			   
 			*/
-			var Marcador = "/ProjetoHibernate/img/marcador.png";
+			var Marcador = pathProjeto + "img/marcador.png";
 			switch( Agendamento.Cdstatus ){
-				case "c" : Marcador = "/ProjetoHibernate/img/marcador_acaminho.png"; break;
-				case "e" : Marcador = "/ProjetoHibernate/img/marcador_ematendimento.png"; break;
-				case "a" : Marcador = "/ProjetoHibernate/img/marcador_finalizado.png"; break;
-				case "p" : Marcador = "/ProjetoHibernate/img/marcador_pendente.png"; break;
+				case "A" : Marcador = pathProjeto + "img/marcador_aberto.png"; break;
+				case "C" : Marcador = pathProjeto + "img/marcador_cancelado.png"; break;
+				case "P" : Marcador = pathProjeto + "img/marcador_pendente.png"; break;
+				case "R" : Marcador = pathProjeto + "img/marcador_reagendado.png"; break;
+				case "E" : Marcador = pathProjeto + "img/marcador_efetuado.png"; break;
 			}
 			
 			var marker = new google.maps.Marker({
@@ -78,13 +81,14 @@ function carregarPontos(pontos) {
 		var EnderecoCompleto = Cliente.Endereco + NumeroEndereco + Complemento + Cliente.Cidade + ", " + Cliente.UF;
 			EnderecoCompleto += CEP;
 			
-		var tplConteudo = "<p><strong>OS: #" + Agendamento.IdOS + "</strong> - último Contato: " + Agendamento.DtReporte +"</p>";
-			tplConteudo += "<p><strong>Status:</strong> "+ Agendamento.CdStatus +"</p>";
-			tplConteudo += "<p><strong>Cliente:</strong> "+ Cliente.NmCliente +"</p>";
-			tplConteudo += "<p><strong>Endereço:</strong> "+ EnderecoCompleto +"</p>";
-			tplConteudo += "<p><strong>Telefone / Celular:</strong> "+ Cliente.Telefone + " / " + Cliente.Celular +"</p>";
-			tplConteudo += "<p><strong>Email:</strong> "+ Cliente.Email +"</p>";
-			tplConteudo += "<p><strong>Equipe:</strong> PegarDadosdaEquipe / <strong>Smartphone: </strong> Agendamento.Smartphone </p>";
+		var tplConteudo = "<p><strong>OS: #" + Agendamento.IdOS + "</strong> - Último Contato: " + Agendamento.DtReporte +"<br>";
+			tplConteudo += "<strong>Equipe:</strong> " + Agendamento.IdEquipe + " / <strong>Smartphone: </strong> " + Agendamento.Smartphone + "<br>";
+			tplConteudo += "<strong>Status:</strong> "+ Agendamento.CdStatus +"<br>";
+			tplConteudo += "<hr></p>";
+			tplConteudo += "<p><strong>Cliente:</strong> "+ Cliente.NmCliente +"<br>";
+			tplConteudo += "<strong>Endereço:</strong> "+ EnderecoCompleto +"<br>";
+			tplConteudo += "<strong>Telefone / Celular:</strong> "+ Cliente.Telefone + " / " + Cliente.Celular +"<br>";
+			tplConteudo += "<strong>Email:</strong> "+ Cliente.Email +"</p>";
 
 			var myOptions = {
 				content: tplConteudo,
@@ -169,7 +173,7 @@ function porEndereco(pontos) {
 		var Telefone = Cliente.Telefone;
 		var Celular  = Cliente.Celular;
 		
-		var tplConteudo = "<p><strong>OS: #" + IdOS + "</strong> - " + DtAgendamento +"</p>";
+		var tplConteudo = "<p><strong>OS: #" + IdOS + "</strong></p>";
 			tplConteudo += "<p><strong>Status:</strong> "+ CdStatus +"</p>";
 			tplConteudo += "<p><strong>Cliente:</strong> "+ NomeCliente +"</p>";
 			tplConteudo += "<p><strong>Endereço:</strong> "+ EnderecoCompleto +"</p>";
@@ -202,7 +206,7 @@ function gerarPontoEndereco(Endereco, Id, Conteudo) {
 		if (status == google.maps.GeocoderStatus.OK) {
 			map.setCenter(results[0].geometry.location);
 
-			var MarcadorIcone = "/ProjetoHibernate/img/marcador.png";
+			var MarcadorIcone = pathProjeto + "img/marcador.png";
 
 			var marker = new google.maps.Marker({
 				map : map,

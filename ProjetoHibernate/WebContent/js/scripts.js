@@ -1,9 +1,12 @@
 $(document).ready(function() {
+	
+	var pathProjeto = "/ProjetoHibernate/";
 
 	/* ====================================================================
 	 *  MASCARAS
 	 * ==================================================================== */
 	$(".dataHora").mask("99/99/9999 99:99:99");
+	$(".data").mask("99/99/9999");
 	
 	/* ====================================================================
 	 *  BUSCAR REPORTE : MAPA
@@ -18,7 +21,7 @@ $(document).ready(function() {
             type: "POST",
             data: { Controle:Controle, slcServico:slcServico },
              
-            url: "/ProjetoHibernate/ReporteServlet.do",
+            url: pathProjeto + "ReporteServlet.do",
             dataType: "json",
             success: function(result){
             	$('#ajaxModal').modal('hide');
@@ -50,12 +53,13 @@ $(document).ready(function() {
         
     	var Controle = $("#Controle").val();
     	var slcServico = $("#slcServico").val();
+    	var dt_agendamento = $("#dt_agendamento").val();
     	
     	$.ajax({
             type: "POST",
-            data: { Controle:Controle, slcServico:slcServico },
+            data: { Controle:Controle, slcServico:slcServico, dt_agendamento:dt_agendamento },
              
-            url: "/ProjetoHibernate/AtendimentoServlet.do",
+            url: pathProjeto + "AtendimentoServlet.do",
             dataType: "json",
             success: function(result){
             	$('#ajaxModal').modal('hide');
@@ -107,96 +111,7 @@ $(document).ready(function() {
 		"</div>" +
 	"</div>" +
 	"</div>";
-    
-	/* ====================================================================
-	 *  BUSCAR SERVICO : MONTAR MODAL COM FORM
-	 * ==================================================================== */
-//    $("#BuscarServico").on("click", function(e){
-//    	e.preventDefault();
-//    	$.ajax({
-//            type: "POST",
-//            url: "/ProjetoHibernate/servico/formBuscarServico.jsp",
-//            dataType: "html",
-//            success: function(result){
-//            	$('#ajaxModal').modal('hide');
-//            		if( $("#modalRetorno") ){ $("#modalRetorno").remove(); }
-//            		$tplModal = result;
-//            		$("body").append($tplModal);
-//            		$('#modalRetorno').modal('show');
-//            		$(".dataHora").mask("99/99/9999 99:99:99");
-//            },
-//            beforeSend: function(){
-//            	if( $("#ajaxModal") ){ $("#ajaxModal").remove(); }
-//            	$("body").append($tplAjaxLoad);
-//                $('#ajaxModal').modal('show');
-//            },
-//        });
-//    });
-    
-	/* ====================================================================
-	 *  CADASTRAR SERVICO : MONTAR MODAL COM FORM
-	 * ==================================================================== */
-//    $("#CadastrarServico").on("click", function(e){
-//    	e.preventDefault();
-//    	$.ajax({
-//            type: "POST",
-//            url: "/ProjetoHibernate/servico/formCadastrarServico.jsp",
-//            dataType: "html",
-//            success: function(result){
-//            		$('#ajaxModal').modal('hide');
-//            		if( $("#modalRetorno") ){ $("#modalRetorno").remove(); }
-//            		$tplModal = result;
-//            		$("body").append($tplModal);
-//            		$('#modalRetorno').modal('show');
-//            		$(".dataHora").mask("99/99/9999 99:99:99");
-//            		
-//            		btnCadastrarServico();
-//            		
-//            },
-//            beforeSend: function(){
-//            	if( $("#ajaxModal") ){ $("#ajaxModal").remove(); }
-//            	$("body").append($tplAjaxLoad);
-//                $('#ajaxModal').modal('show');
-//            },
-//        });
-//    });
-//    
-//    
-//    function btnCadastrarServico(){
-//		$("#btnCadastrarServico").on("click", function(e){
-//			e.preventDefault();
-//			var dados = $("#formCadastrarServico").serialize();
-//			
-////			Mandar Ajax
-//	    	$.ajax({
-//	            type: "POST",
-//	            data: dados,
-//	            url: "/ProjetoHibernate/ServicoServlet.do",
-//	            dataType: "JSON",
-//	            success: function(result){
-//            		if( $("#modalRetorno") ){ $("#modalRetorno").remove(); }
-//            		
-//            		if( result == "OK" ){ $tplModal = $tplModalSmall.replace("@mensagem", "Serviço cadastrado com sucesso!"); }
-//            		else { $tplModal = $tplModalSmall.replace("@mensagem", "Erro ao cadastrar serviço!"); }
-//
-//            		$("body").append($tplModal);
-//            		$('#modalRetorno').modal('show');
-//            		
-//            		
-////	            	$(".mensagemRetorno").show().html(msg);
-//	            		
-//	            },
-//	            beforeSend: function(){
-//	            	if( $("#ajaxModal") ){ $("#ajaxModal").remove(); }
-//	            	$("body").append($tplAjaxLoad);
-//	                $('#ajaxModal').modal('show');
-//	            },
-//	        });
-//
-//		});
-//    }
-    
-    
+        
     $(".confirm-delete").on("click", function(e){
     	e.preventDefault();
     	$("#ConfirmarApagarServico").modal('show');
@@ -238,7 +153,7 @@ $(document).ready(function() {
             type: "POST",
             data: { Controle:Controle, cpf : cpf, cnpj : cnpj},
              
-            url: "/ProjetoHibernate/ClienteServlet.do",
+            url: pathProjeto + "ClienteServlet.do",
             dataType: "json",
             success: function(result){
             	
@@ -292,7 +207,7 @@ $(document).ready(function() {
     
     $("#fecharBtnCalendario").on("click", function(e){
     	e.preventDefault();
-    	window.location="/ProjetoHibernate/atendimento/calendario/";
+    	window.location=pathProjeto + "atendimento/calendario/";
     });
     
     

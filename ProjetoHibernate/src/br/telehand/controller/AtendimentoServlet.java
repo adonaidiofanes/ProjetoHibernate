@@ -212,13 +212,17 @@ public class AtendimentoServlet extends HttpServlet {
 				&& (request.getParameter("slcServico") != null)) {
 	
 			Integer servicoSelecionado = Integer.parseInt(request.getParameter("slcServico"));
+			String dt_agendamento = request.getParameter("dt_agendamento");			
 	
 			// Recebe todo conteudo para transformar em JSON
 			JSONArray jArr = new JSONArray();
 	
+			// Tratar datas
+			
+			
 			// Buscar Agendamento que contenha Obj Servico
 			AtendimentoDAO DAOAtendimento = new AtendimentoDAO();
-			List<TbAtendimento> agendamentos = DAOAtendimento.listarIdServico(servicoSelecionado);
+			List<TbAtendimento> agendamentos = DAOAtendimento.listarIdServico(servicoSelecionado, dt_agendamento);
 			
 			for (int i = 0; i < agendamentos.size(); i++) {
 				TbAtendimento agendamento = (TbAtendimento) agendamentos.get(i);
@@ -303,7 +307,7 @@ public class AtendimentoServlet extends HttpServlet {
 
 			// Buscar Agendamento que contenha Obj Servico
 			AtendimentoDAO DAOAtendimento = new AtendimentoDAO();
-			List<TbAtendimento> agendamentos = DAOAtendimento.listarIdServico(servicoSelecionado);
+			List<TbAtendimento> agendamentos = DAOAtendimento.listarIdServico(servicoSelecionado, "");
 			
 			for (int i = 0; i < agendamentos.size(); i++) {
 				TbAtendimento agendamento = (TbAtendimento) agendamentos.get(i);

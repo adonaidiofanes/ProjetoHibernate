@@ -101,7 +101,7 @@
 								Kit</label>
 								<div class="col-sm-8">
 									<input type="text" class="form-control" id="Kit"
-										name="Kit" value="<%=Kit%>">
+										name="Kit" value="<%=Kit%>" disabled>
 								</div>
 							</div>
 							

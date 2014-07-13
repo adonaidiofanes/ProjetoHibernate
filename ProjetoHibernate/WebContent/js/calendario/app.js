@@ -1,4 +1,6 @@
 (function($) {
+	
+	var pathProjeto = "/ProjetoHibernate/";
 
 	/* ====================================================================
 	 *  MONTAR CALENDARIO DE AGENDAMENTOS
@@ -23,7 +25,7 @@
 				Controle : Controle,
 				slcServico : slcServico
 			},
-			url : "/ProjetoHibernate/AgendaServlet.do",
+			url : pathProjeto + "AgendaServlet.do",
 			dataType : "JSON",
 			success : function(result) {
 				
@@ -126,7 +128,7 @@
 	"<div class='modal fade' id='ajaxModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>" +
 	"<div class='modal-dialog'>" + 
 		"<div class='modal-content'>" +
-			"<div class='modal-body'><p class='text-center'><img src='/ProjetoHibernate/img/carregando.gif'></p><p class='text-center'>Carregando...</p></div>" +
+			"<div class='modal-body'><p class='text-center'><img src='"+pathProjeto+"img/carregando.gif'></p><p class='text-center'>Carregando...</p></div>" +
 		"</div>" +
 	"</div>" +
 	"</div>";

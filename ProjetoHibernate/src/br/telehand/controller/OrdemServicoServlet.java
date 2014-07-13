@@ -11,11 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import br.telehand.dao.AlmKitDAO;
 import br.telehand.dao.AtendimentoDAO;
 import br.telehand.dao.CategoriaDAO;
 import br.telehand.dao.OsDAO;
 import br.telehand.dao.ServicoDAO;
 import br.telehand.dao.ViewClienteDAO;
+import br.telehand.model.TbAlmKit;
 import br.telehand.model.TbAtendimento;
 import br.telehand.model.TbCategoria;
 import br.telehand.model.TbOs;
@@ -291,12 +293,22 @@ public class OrdemServicoServlet extends HttpServlet {
 			OsDAO oDAO = new OsDAO();
 			TbOs os = oDAO.selecionar(Id);
 			
+			// Atualizar o CdKit de acordo com o tipo de servico
+			AlmKitDAO kitDAO = new AlmKitDAO();
+			TbAlmKit kit = kitDAO.selecionarIdServico(IdServico);
+			
+			String cdKit = "0";
+			
+			if(kit != null){ cdKit = Integer.toString(kit.getCdKit()); }
+			
+			os.setCdKit(cdKit);
+			
 			os.setTxDetalhe(Detalhe);
 			
 			TbServico servico = new TbServico();
 			servico.setIdServico(IdServico);
 			
-			os.setTbServico(servico);			
+			os.setTbServico(servico);
 			
 			String retorno = oDAO.atualizar(os);
 			
