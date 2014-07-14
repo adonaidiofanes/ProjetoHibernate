@@ -33,7 +33,7 @@ public class Pendente implements StateAtendimento {
 
 	@Override
 	public void reagendarAtendimento(TbAtendimento atendimento) {
-		atendimento.estabelecerEstado(Reagendado.instancia());
+		atendimento.definirEstado(Reagendado.instancia());
 		System.out.println("Mudança de estado de " + instancia.state + " para " + atendimento.retornarEstado().getStateEnum() + " realizada.");
 	}
 
@@ -44,13 +44,13 @@ public class Pendente implements StateAtendimento {
 
 	@Override
 	public void gerarPendencia(TbAtendimento atendimento) {
-		atendimento.estabelecerEstado(Pendente.instancia());
+		atendimento.definirEstado(Pendente.instancia());
 		System.out.println("Mudança de estado de " + instancia.state + " para " + atendimento.retornarEstado().getStateEnum() + " realizada.");
 	}
 
 	@Override
 	public void cancelarAtendimento(TbAtendimento atendimento) {
-		atendimento.estabelecerEstado(Cancelado.instancia());
+		atendimento.definirEstado(Cancelado.instancia());
 		System.out.println("Mudança de estado de " + instancia.state + " para " + atendimento.retornarEstado().getStateEnum() + " realizada.");	}
 
 }

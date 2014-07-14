@@ -10,11 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.Session;
-
 import br.telehand.dao.LoginDAO;
 import br.telehand.dao.VwDadosRhDAO;
 import br.telehand.model.TbLogin;
+import br.telehand.model.TbUsuario;
 import br.telehand.model.VwDadosRh;
 
 /**
@@ -58,35 +57,39 @@ public class LoginServlet extends HttpServlet {
 			
 			Integer matricula = Integer.parseInt(request.getParameter("matricula"));
 			String senha = request.getParameter("senha");
-			String papel;
+//			String papel;
 			
 			LoginDAO lDAO = new LoginDAO();
 			TbLogin login = lDAO.validaLogin(matricula, senha);
 
 			if(login != null){
-				// @TODO: Pegar dados da VwDadosRh e gravar em uma sessao
+				// @TODO: Pegar dados da VwDadosRh e gravar em uma sessao ==> feito com o usuarioLogado na sessao!
 				VwDadosRhDAO rhDAO = new VwDadosRhDAO();
 				VwDadosRh rh = rhDAO.selectByMatricula(login.getId().getNrMatricula());
 
-				// Pegar dados(papel) do Cd Usuario e gravar numa sessao: ex: adminstrador, tecnico...
-				switch(login.getId().getCdUsuario()){
-					case 'A' : papel = "administrador";
-						break;
-					case 'T':  papel = "tecnico";
-						break;
-					case 'C' : papel = "coordenador";
-						break;
-					case 'S' : papel = "supervisor";
-						break;
-					case 'D' : papel = "atendente";
-						break;
-					default: papel = "anonimo";
-				}
+				TbUsuario usuarioLogado = new TbUsuario(rh.getNrMatricula(), login.getId().getCdUsuario(), rh.getNmEmpregado());
 				
-				// Gravar dados do usuario logado em uma sessao
-				session.setAttribute("papel", papel);
-				session.setAttribute("nomeUsuario", rh.getNmEmpregado());
-				session.setAttribute("matriculaUsuario", rh.getNrMatricula());
+				// Gravar dados do usuario logado na sessao
+				session.setAttribute("usuarioLogado", usuarioLogado);
+				
+//				session.setAttribute("papel", papel);
+//				session.setAttribute("nomeUsuario", rh.getNmEmpregado());
+//				session.setAttribute("matriculaUsuario", rh.getNrMatricula());
+				
+				// Pegar dados(papel) do Cd Usuario e gravar numa sessao: ex: adminstrador, tecnico...
+//				switch(login.getId().getCdUsuario()){
+//					case 'A' : papel = "administrador";
+//						break;
+//					case 'T':  papel = "tecnico";
+//						break;
+//					case 'C' : papel = "coordenador";
+//						break;
+//					case 'S' : papel = "supervisor";
+//						break;
+//					case 'D' : papel = "atendente";
+//						break;
+//					default: papel = "anonimo";
+//				}
 				
 				// redireciona o usuario para a pagina principal do sistema				
 				response.sendRedirect("atendimento");

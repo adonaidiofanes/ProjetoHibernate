@@ -47,7 +47,7 @@ public class Cancelado implements StateAtendimento {
 
 	@Override
 	public void cancelarAtendimento(TbAtendimento atendimento) {
-		atendimento.estabelecerEstado(Cancelado.instancia());
+		atendimento.definirEstado(Cancelado.instancia());
 		System.out.println("Mudança de estado de " + instancia.state + " para " + atendimento.retornarEstado().getStateEnum() + " realizada.");	}
 
 }

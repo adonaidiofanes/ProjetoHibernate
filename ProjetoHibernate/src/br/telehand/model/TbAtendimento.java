@@ -134,6 +134,7 @@ public class TbAtendimento implements java.io.Serializable {
 		return this.cdStatus;
 	}
 
+	@SuppressWarnings("unused")
 	private void setCdStatus(char cdStatus) {
 		this.cdStatus = cdStatus;
 		montaEstado(cdStatus);
@@ -143,7 +144,7 @@ public class TbAtendimento implements java.io.Serializable {
 		return state;
 	}
 
-	public void estabelecerEstado(StateAtendimento state) {
+	public void definirEstado(StateAtendimento state) {
 		this.state = state;
 		this.cdStatus = state.getStateEnum().getStateChar();
 	}
@@ -171,19 +172,19 @@ public class TbAtendimento implements java.io.Serializable {
 	private void montaEstado(char cdStatus) {
 		switch (cdStatus) {
 		case 'A':
-			this.estabelecerEstado(Aberto.instancia());
+			this.definirEstado(Aberto.instancia());
 			break;
 		case 'C':
-			this.estabelecerEstado(Cancelado.instancia());
+			this.definirEstado(Cancelado.instancia());
 			break;
 		case 'P':
-			this.estabelecerEstado(Pendente.instancia());
+			this.definirEstado(Pendente.instancia());
 			break;
 		case 'R':
-			this.estabelecerEstado(Reagendado.instancia());
+			this.definirEstado(Reagendado.instancia());
 			break;
 		case 'E':
-			this.estabelecerEstado(Efetuado.instancia());
+			this.definirEstado(Efetuado.instancia());
 			break;
 		}
 	}

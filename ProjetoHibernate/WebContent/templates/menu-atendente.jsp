@@ -1,10 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@page import="br.telehand.model.TbUsuario"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 	
 	<%
 		// Resgatar sessao do usuario
-		String nomeUsuario = (String) session.getAttribute("nomeUsuario");
-				
+		//String nomeUsuario = (String) session.getAttribute("nomeUsuario");
+		TbUsuario usuarioLogado = (TbUsuario) session.getAttribute("usuarioLogado");
+		String nomeUsuario = usuarioLogado.getNomeUsuario();
 	%>
 	
 	<nav class="navbar navbar-default" role="navigation">

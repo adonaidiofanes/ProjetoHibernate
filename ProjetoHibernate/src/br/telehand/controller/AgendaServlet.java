@@ -20,6 +20,7 @@ import org.json.JSONObject;
 
 import br.telehand.dao.VwAgendaComAgendamentoDAO;
 import br.telehand.dao.VwAgendaSemAgendamentoDAO;
+import br.telehand.model.TbUsuario;
 import br.telehand.model.VwAgendaComAgendamento;
 import br.telehand.model.VwAgendaSemAgendamento;
 import br.telehand.util.Util;
@@ -200,7 +201,9 @@ public class AgendaServlet extends HttpServlet {
 		Integer IdServico = Integer.parseInt(request.getParameter("slcServico"));
 		
 		HttpSession session = request.getSession();
-		String matriculaUsuario = session.getAttribute("matriculaUsuario").toString();
+		//String matriculaUsuario = session.getAttribute("matriculaUsuario").toString();
+		TbUsuario usuarioLogado = (TbUsuario) session.getAttribute("usuarioLogado");
+		int matriculaUsuario = usuarioLogado.getNrMatricula();
 		
 		String Status = "";
 		

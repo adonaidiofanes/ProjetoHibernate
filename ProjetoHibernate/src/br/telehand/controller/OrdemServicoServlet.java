@@ -22,6 +22,7 @@ import br.telehand.model.TbAtendimento;
 import br.telehand.model.TbCategoria;
 import br.telehand.model.TbOs;
 import br.telehand.model.TbServico;
+import br.telehand.model.TbUsuario;
 import br.telehand.model.ViewClientes;
 import br.telehand.util.Util;
 
@@ -58,8 +59,12 @@ public class OrdemServicoServlet extends HttpServlet {
 			// Verificar papel do usuario e listar as OS de acordo com papel
 			// Ex: ex: tec só dele, adm e coordenador todas OS
 			HttpSession session = request.getSession();
-			String papel = (String) session.getAttribute("papel");
-			Integer matricula = (Integer) session.getAttribute("matriculaUsuario");
+			
+//			String papel = (String) session.getAttribute("papel");
+//			Integer matricula = (Integer) session.getAttribute("matriculaUsuario");
+			TbUsuario usuarioLogado = (TbUsuario) session.getAttribute("usuarioLogado");
+			int matricula = usuarioLogado.getNrMatricula();
+			
 			String msgStatusAtualizar = "";
 			
 			if( session.getAttribute("msgStatusAtualizar") != null ){
@@ -68,15 +73,16 @@ public class OrdemServicoServlet extends HttpServlet {
 			}
 			
 			// Redirecionar o usuario se tiver papel supervisor ou anonimo
-			if( (papel == "supervisor") || (papel == "anonimo") ){
+			if( usuarioLogado.isPerfilSupervisor() || usuarioLogado.isPerfilAnonimo() ){
 				response.sendRedirect("atendimento/index.jsp");
 				return;
 			}
 			
 			// Tecnico e coordenador veem todas OS
-			if( (papel == "coordenador") || ( papel == "administrador" ) ){
+			if( usuarioLogado.isPerfilCoordenador() || usuarioLogado.isPerfilAdministrador() ){
 				retorno = o.listarTodos();
-			} else if (papel == "tecnico"){
+				
+			} else if (usuarioLogado.isPerfilTecnico()) {
 				// Tecnico ve apenas as deles
 				retorno = o.listarPorMatricula(matricula);
 			}

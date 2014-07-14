@@ -37,7 +37,7 @@ public class Efetuado implements StateAtendimento {
 
 	@Override
 	public void concluirAtendimento(TbAtendimento atendimento) {
-		atendimento.estabelecerEstado(Efetuado.instancia());
+		atendimento.definirEstado(Efetuado.instancia());
 		System.out.println("Mudança de estado de " + instancia.state + " para " + atendimento.retornarEstado().getStateEnum() + " realizada.");	}
 
 	@Override
