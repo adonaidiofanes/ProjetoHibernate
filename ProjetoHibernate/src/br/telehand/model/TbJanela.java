@@ -5,11 +5,14 @@ package br.telehand.model;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+
 import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -33,16 +36,18 @@ public class TbJanela implements java.io.Serializable {
 	private Date dtVigIni;
 	private Set tbAgendas = new HashSet(0);
 	private Set tbDiases = new HashSet(0);
+	private Character cdTipo;
 
 	public TbJanela() {
 	}
 
 	public TbJanela(TbServico tbServico, Date hrInicial, Date hrFinal,
-			Date dtVigIni) {
+			Date dtVigIni, Character cdTipo) {
 		this.tbServico = tbServico;
 		this.hrInicial = hrInicial;
 		this.hrFinal = hrFinal;
 		this.dtVigIni = dtVigIni;
+		this.cdTipo = cdTipo;
 	}
 
 	public TbJanela(TbServico tbServico, Date hrInicial, Date hrFinal,
@@ -133,6 +138,15 @@ public class TbJanela implements java.io.Serializable {
 
 	public void setTbDiases(Set<TbDias> tbDiases) {
 		this.tbDiases = tbDiases;
+	}
+	
+	@Column(name = "cd_tipo", length = 1)
+	public Character getCdTipo() {
+		return this.cdTipo;
+	}
+
+	public void setCdTipo(Character cdStatus) {
+		this.cdTipo = cdTipo;
 	}
 
 }
