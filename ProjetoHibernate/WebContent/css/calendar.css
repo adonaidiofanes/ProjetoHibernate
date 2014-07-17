@@ -349,6 +349,8 @@
 .event-special {
   background-color: #800080;
 }
+.event-extra {background-color:#ff004f;}
+
 .day-highlight:hover,
 .day-highlight {
   background-color: #dddddd;

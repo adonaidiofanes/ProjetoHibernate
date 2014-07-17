@@ -332,6 +332,11 @@ public class AgendaServlet extends HttpServlet {
 			objJSON.put("id", hash);
 			objJSON.put("class", "event-success"); // event-success = bolinha verde
 			
+			// Verificar se e um atendimento extra
+			if(obj.getId().getCdDia() == 0 && obj.getId().getCdSemana() == 0){
+				objJSON.put("class", "event-extra"); // event-success = bolinha preta
+			}
+			
 			// Transformar String em Date
 			SimpleDateFormat fTotal = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			try {
@@ -361,6 +366,12 @@ public class AgendaServlet extends HttpServlet {
 				
 				// Montar Titulo
 				objJSON.put("title", "Atendimento Disponível - " + hInicial + " - " + hFinal);
+				
+				// Verificar se e um atendimento extra
+				if(obj.getId().getCdDia() == 0 && obj.getId().getCdSemana() == 0){
+					objJSON.put("title", "Atendimento Extra - " + hInicial + " - " + hFinal);
+				}
+				
 				objJSON.put("url", urlProjeto + "/AgendaServlet.do?hInicial=" + 
 				hInicial + "&hFinal=" + hFinal + "&dia=" + ano_mes_dia + "&idServico="+ IdServico + "&idEquipe=" + IdEquipe + 
 				"&usuarioLogado=" + matriculaUsuario + "&idJanela=" + IdJanela + "&dt_agendamento=" + dataFormatadaInicial + "&matriculaTecnico=" + matriculaTecnico + "&Controle=CadastrarAtendimento");
