@@ -20,3 +20,12 @@ Usuários e senhas padrões
 | Coordenador | 3        |    coo1 |
 | Supervisor | 4        |    sup1 |
 | Atendente | 5        |    ate1 |
+
+CPF's de usuários para teste
+----------------------------
+| CPF |
+| :-- |
+| 10000000001 |
+| 10000000002 | 
+| 10000000003 |
+| 10000000004 |
