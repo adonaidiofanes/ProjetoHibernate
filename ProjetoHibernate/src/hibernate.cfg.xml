@@ -7,9 +7,10 @@
 
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/db_sge</property>
+		<property name="hibernate.connection.url">jdbc:mysql://157.86.173.236:3306/db_sge</property>
+		<!--property name="hibernate.connection.url">jdbc:mysql://localhost:3306/db_sge</property-->
 		<property name="hibernate.connection.username">root</property>
-		<property name="hibernate.connection.password">ad0nai</property>
+		<property name="hibernate.connection.password">sisforce</property> 
 		
 		<property name="hibernate.current_session_context_class">thread</property> 
 		<!--property name="hibernate.session_factory_name">SessionFactory</property -->

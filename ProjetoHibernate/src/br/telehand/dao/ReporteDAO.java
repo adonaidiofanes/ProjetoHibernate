@@ -10,6 +10,7 @@ import org.apache.commons.logging.LogFactory;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import br.telehand.model.TbReporte;
@@ -50,6 +51,8 @@ public class ReporteDAO {
 					java.sql.Timestamp dataF = java.sql.Timestamp.valueOf(dtReporteF);
 					
 					cr.add(Restrictions.between("r.id.dtReporte", dataI, dataF));
+//					cr.addOrder(Order.desc("r.id.dtReporte")).uniqueResult();
+					
 					
 					 list = cr.list();
 					 

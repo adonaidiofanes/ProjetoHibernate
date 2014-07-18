@@ -36,18 +36,16 @@ public class TbJanela implements java.io.Serializable {
 	private Date dtVigIni;
 	private Set tbAgendas = new HashSet(0);
 	private Set tbDiases = new HashSet(0);
-	private Character cdTipo;
 
 	public TbJanela() {
 	}
 
 	public TbJanela(TbServico tbServico, Date hrInicial, Date hrFinal,
-			Date dtVigIni, Character cdTipo) {
+			Date dtVigIni) {
 		this.tbServico = tbServico;
 		this.hrInicial = hrInicial;
 		this.hrFinal = hrFinal;
 		this.dtVigIni = dtVigIni;
-		this.cdTipo = cdTipo;
 	}
 
 	public TbJanela(TbServico tbServico, Date hrInicial, Date hrFinal,
@@ -72,7 +70,7 @@ public class TbJanela implements java.io.Serializable {
 		this.idJanela = idJanela;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "Id_servico", nullable = false)
 	public TbServico getTbServico() {
 		return this.tbServico;
@@ -121,8 +119,8 @@ public class TbJanela implements java.io.Serializable {
 	public void setDtVigIni(Date dtVigIni) {
 		this.dtVigIni = dtVigIni;
 	}
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tbJanela")
+	
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "tbJanela")
 	public Set<TbAgenda> getTbAgendas() {
 		return this.tbAgendas;
 	}
@@ -131,7 +129,7 @@ public class TbJanela implements java.io.Serializable {
 		this.tbAgendas = tbAgendas;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tbJanela")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "tbJanela")
 	public Set<TbDias> getTbDiases() {
 		return this.tbDiases;
 	}
@@ -140,13 +138,4 @@ public class TbJanela implements java.io.Serializable {
 		this.tbDiases = tbDiases;
 	}
 	
-	@Column(name = "cd_tipo", length = 1)
-	public Character getCdTipo() {
-		return this.cdTipo;
-	}
-
-	public void setCdTipo(Character cdStatus) {
-		this.cdTipo = cdTipo;
-	}
-
 }
