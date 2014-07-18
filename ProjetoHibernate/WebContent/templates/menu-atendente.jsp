@@ -29,7 +29,7 @@
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consultas <b class="caret"></b></a>
 			  <ul class="dropdown-menu" role="menu">
-				<li><a href="/ProjetoHibernate/atendimento/calendario/">Atendimentos por cliente</a></li>
+				<li><a href="/ProjetoHibernate/atendimento/">Atendimentos por cliente</a></li>
 			  </ul>
 			</li>
 			
