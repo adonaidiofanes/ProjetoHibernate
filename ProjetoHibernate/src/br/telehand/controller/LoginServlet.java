@@ -63,7 +63,7 @@ public class LoginServlet extends HttpServlet {
 			TbLogin login = lDAO.validaLogin(matricula, senha);
 
 			if(login != null){
-				// @TODO: Pegar dados da VwDadosRh e gravar em uma sessao ==> feito com o usuarioLogado na sessao!
+
 				VwDadosRhDAO rhDAO = new VwDadosRhDAO();
 				VwDadosRh rh = rhDAO.selectByMatricula(login.getId().getNrMatricula());
 
@@ -91,8 +91,13 @@ public class LoginServlet extends HttpServlet {
 //					default: papel = "anonimo";
 //				}
 				
-				// redireciona o usuario para a pagina principal do sistema				
-				response.sendRedirect("atendimento");
+				// redireciona o usuario para a pagina principal do sistema	
+				// Se for tecnico direciona para tela de OS
+				if(usuarioLogado.isPerfilTecnico()){
+					response.sendRedirect("OrdemServicoServlet.do?Controle=listar");
+				} else {
+					response.sendRedirect("atendimento");
+				}
 				
 			} else {
 				
