@@ -51,7 +51,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<!-- div class="form-group">
 								<label for="dt_vigencia" class="col-sm-4 control-label"><i
 									class="glyphicon glyphicon-calendar"></i> Data e hora de
 									Vigência</label>
@@ -61,7 +61,11 @@
 										placeholder="__/__/____ HH:mm:ss">
 									<p class="help-block">A data de vigência do serviço</p>
 								</div>
-							</div>
+							</div-->
+							
+							<input type="hidden" class="form-control dataHora"
+								id="dt_vigencia" name="dt_vigencia" class=""
+								placeholder="__/__/____ HH:mm:ss" value="01/01/2020 00:00:00">
 
 							<div class="form-group">
 								<label for="qtd_emp" class="col-sm-4 control-label"><i

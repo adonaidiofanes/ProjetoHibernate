@@ -67,7 +67,6 @@
 								<th>Qt Inicio</th>
 								<th>Qt Fim</th>
 								<th>Qt Emp</th>
-								<th>Data Vigência</th>
 								<th></th>
 								<th></th>
 							</tr>
@@ -100,7 +99,7 @@
 								<td><%=sv.getQtInicio()%></td>
 								<td><%=sv.getQtFim()%></td>
 								<td><%=sv.getQtEmp()%></td>
-								<td><%=Util.DateParaString(sv.getDtVigencia(), "dd/MM/yyyy HH:mm:ss")%></td>
+								<!-- td><%=Util.DateParaString(sv.getDtVigencia(), "dd/MM/yyyy HH:mm:ss")%></td -->
 								<td><button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> <a class="color-white" href="/ProjetoHibernate/ServicoServlet.do?Controle=Editar&id=<%=sv.getIdServico()%>">Editar</a></button></td>
 								<td><button type="button" class="btn btn-danger btn-xs confirm-delete" data-id="<%=sv.getIdServico()%>"><i class="glyphicon glyphicon-trash"></i> Apagar</button></td>
 
