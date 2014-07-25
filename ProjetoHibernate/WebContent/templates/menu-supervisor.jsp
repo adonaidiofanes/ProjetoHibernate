@@ -42,7 +42,7 @@
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Atendimentos <b class="caret"></b></a>
 			  <ul class="dropdown-menu" role="menu">
 				<li><a href="/ProjetoHibernate/atendimento/calendario/">Gerenciar atendimentos</a></li>
-				<li><a href="#">Criar atendimento extra</a></li>
+				<li><a href="#">Atendimento extra</a></li>
 			  </ul>
 			</li>
 			

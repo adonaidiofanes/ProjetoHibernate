@@ -296,10 +296,12 @@ public class AgendaServlet extends HttpServlet {
 					// Montar Titulo
 					objJSON.put("title", Status + " - " + hInicial + " - " + hFinal);
 					
-					objJSON.put("url", urlProjeto + "/AgendaServlet.do?hInicial=" + 
+					objJSON.put("url", urlProjeto + "/AgendaServlet.do?" +
+					"idOs=" + IdOS + "&idAtendimento=" + IdAtendimento + 
+					"&hInicial=" + 
 					hInicial + "&hFinal=" + hFinal + "&dia=" + ano_mes_dia + "&idServico="+ IdServico + "&idEquipe=" + IdEquipe + 
 					"&usuarioLogado=" + matriculaUsuario + "&idJanela=" + IdJanela + "&dt_agendamento=" + dataFormatadaInicial + "&matriculaTecnico=" + matriculaTecnico +
-					"&idOs=" + IdOS + "&idAtendimento=" + IdAtendimento + "&Controle=" + controle);
+					"&Controle=" + controle);
 					
 					// Inserir o resultado no array
 					jArr.put(objJSON);
